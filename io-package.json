@@ -73,13 +73,13 @@
 		"url": "",
 		"token": "",
 		"notificationType": "Telegram",
-		"e-mailInstance": "item1",
-		"matrixInstance": "item1",
-		"pushoverInstance": "item1",
-		"discordInstance": "item1",
-		"signalInstance": "item1",
-		"telegramInstance": "item1",
-		"whatsappInstance": "item1"
+		"emailInstance": "",
+		"matrixInstance": "",
+		"pushoverInstance": "",
+		"discordInstance": "",
+		"signalInstance": "",
+		"telegramInstance": "",
+		"whatsappInstance": ""
 	},
 	"objects": [],
 	"instanceObjects": [

@@ -41,7 +41,7 @@ class GotifyWs extends utils.Adapter {
 		this.log.info("config url: " + this.config.url);
 		this.log.info("config token: " + this.config.token);
 		this.log.info("config notificationType: " + this.config.notificationType);
-		this.log.info("config e-mailInstance: " + this.config.e - mailInstance);
+		this.log.info("config emailInstance: " + this.config.emailInstance);
 		this.log.info("config matrixInstance: " + this.config.matrixInstance);
 		this.log.info("config pushoverInstance: " + this.config.pushoverInstance);
 		this.log.info("config discordInstance: " + this.config.discordInstance);

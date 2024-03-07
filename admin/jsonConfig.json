@@ -5,16 +5,27 @@
 		"url": {
 			"type": "text",
 			"label": "Gotify URL with Port",
+			"sm": 12,
+			"md": 8,
+			"lg": 4,
+			"help": "Gotify URL with Port",
 			"newLine": true
 		},
 		"token": {
 			"type": "text",
 			"label": "Gotify Token",
-			"newLine": true
+			"sm": 12,
+			"md": 8,
+			"lg": 4,
+			"help": "Gotify Token"
 		},
 		"notificationType": {
 			"type": "select",
 			"label": "Notification type",
+			"sm": 12,
+			"md": 8,
+			"lg": 4,
+			"help": "Notification type",
 			"options": [
 				{
 					"label": "E-Mail",
@@ -47,82 +58,110 @@
 			],
 			"newLine": true
 		},
-		"e-mailInstance": {
+		"emailInstance": {
 			"type": "select",
+			"hidden": "data.notificationType !== 'E-Mail'",
 			"label": "E-Mail Instance",
+			"sm": 12,
+			"md": 8,
+			"lg": 4,
+			"help": "E-Mail Instance",
 			"options": [
 				{
 					"label": "Item 1",
 					"value": "item1"
 				}
-			],
-			"newLine": true
+			]
 		},
 		"matrixInstance": {
 			"type": "select",
+			"hidden": "data.notificationType !== 'Matrix'",
 			"label": "Matrix Instance",
+			"sm": 12,
+			"md": 8,
+			"lg": 4,
+			"help": "Matrix Instance",
 			"options": [
 				{
 					"label": "Item 1",
 					"value": "item1"
 				}
-			],
-			"newLine": true
+			]
 		},
 		"pushoverInstance": {
 			"type": "select",
+			"hidden": "data.notificationType !== 'Pushover'",
 			"label": "Pushover Instance",
+			"sm": 12,
+			"md": 8,
+			"lg": 4,
+			"help": "Pushover Instance",
 			"options": [
 				{
 					"label": "Item 1",
 					"value": "item1"
 				}
-			],
-			"newLine": true
+			]
 		},
 		"discordInstance": {
 			"type": "select",
+			"hidden": "data.notificationType !== 'Discord'",
 			"label": "Discord Instance",
+			"sm": 12,
+			"md": 8,
+			"lg": 4,
+			"help": "Discord Instance",
 			"options": [
 				{
 					"label": "Item 1",
 					"value": "item1"
 				}
-			],
-			"newLine": true
+			]
 		},
 		"signalInstance": {
 			"type": "select",
+			"hidden": "data.notificationType !== 'Signal'",
 			"label": "Signal Instance",
+			"sm": 12,
+			"md": 8,
+			"lg": 4,
+			"help": "Signal Instance",
 			"options": [
 				{
 					"label": "Item 1",
 					"value": "item1"
 				}
-			],
-			"newLine": true
+			]
 		},
 		"telegramInstance": {
 			"type": "select",
+			"hidden": "data.notificationType !== 'Telegram'",
 			"label": "Telegram Instance",
+			"sm": 12,
+			"md": 8,
+			"lg": 4,
+			"help": "Telegram Instance",
 			"options": [
 				{
 					"label": "Item 1",
 					"value": "item1"
 				}
-			],
-			"newLine": true
+			]
 		},
 		"whatsappInstance": {
 			"type": "select",
+			"hidden": "data.notificationType !== 'Whatsapp'",
 			"label": "Whatsapp Instance",
+			"sm": 12,
+			"md": 8,
+			"lg": 4,
+			"help": "Whatsapp Instance",
 			"options": [
 				{
 					"label": "Item 1",
 					"value": "item1"
 				}
-			],
-			"newLine": true
+			]
 		}
 	}
 }
