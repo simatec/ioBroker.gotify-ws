@@ -1,0 +1,13 @@
+{
+	"gotify-ws adapter settings": "Ustawienia adaptera dla gotify-ws",
+	"url": "Gotify URL with Port",
+	"token": "Gotify Token",
+	"notificationType": "Notification type",
+	"e-mailInstance": "E-Mail Instance",
+	"matrixInstance": "Matrix Instance",
+	"pushoverInstance": "Pushover Instance",
+	"discordInstance": "Discord Instance",
+	"signalInstance": "Signal Instance",
+	"telegramInstance": "Telegram Instance",
+	"whatsappInstance": "Whatsapp Instance"
+}

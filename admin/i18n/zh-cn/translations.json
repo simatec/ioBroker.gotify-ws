@@ -1,0 +1,13 @@
+{
+	"gotify-ws adapter settings": "gotify-ws的适配器设置",
+	"url": "Gotify URL with Port",
+	"token": "Gotify Token",
+	"notificationType": "Notification type",
+	"e-mailInstance": "E-Mail Instance",
+	"matrixInstance": "Matrix Instance",
+	"pushoverInstance": "Pushover Instance",
+	"discordInstance": "Discord Instance",
+	"signalInstance": "Signal Instance",
+	"telegramInstance": "Telegram Instance",
+	"whatsappInstance": "Whatsapp Instance"
+}

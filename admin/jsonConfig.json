@@ -1,0 +1,128 @@
+{
+	"i18n": true,
+	"type": "panel",
+	"items": {
+		"url": {
+			"type": "text",
+			"label": "Gotify URL with Port",
+			"newLine": true
+		},
+		"token": {
+			"type": "text",
+			"label": "Gotify Token",
+			"newLine": true
+		},
+		"notificationType": {
+			"type": "select",
+			"label": "Notification type",
+			"options": [
+				{
+					"label": "E-Mail",
+					"value": "E-Mail"
+				},
+				{
+					"label": "Matrix",
+					"value": "Matrix"
+				},
+				{
+					"label": "Pushover",
+					"value": "Pushover"
+				},
+				{
+					"label": "Discord",
+					"value": "Discord"
+				},
+				{
+					"label": "Signal",
+					"value": "Signal"
+				},
+				{
+					"label": "Telegram",
+					"value": "Telegram"
+				},
+				{
+					"label": "Whatsapp",
+					"value": "Whatsapp"
+				}
+			],
+			"newLine": true
+		},
+		"e-mailInstance": {
+			"type": "select",
+			"label": "E-Mail Instance",
+			"options": [
+				{
+					"label": "Item 1",
+					"value": "item1"
+				}
+			],
+			"newLine": true
+		},
+		"matrixInstance": {
+			"type": "select",
+			"label": "Matrix Instance",
+			"options": [
+				{
+					"label": "Item 1",
+					"value": "item1"
+				}
+			],
+			"newLine": true
+		},
+		"pushoverInstance": {
+			"type": "select",
+			"label": "Pushover Instance",
+			"options": [
+				{
+					"label": "Item 1",
+					"value": "item1"
+				}
+			],
+			"newLine": true
+		},
+		"discordInstance": {
+			"type": "select",
+			"label": "Discord Instance",
+			"options": [
+				{
+					"label": "Item 1",
+					"value": "item1"
+				}
+			],
+			"newLine": true
+		},
+		"signalInstance": {
+			"type": "select",
+			"label": "Signal Instance",
+			"options": [
+				{
+					"label": "Item 1",
+					"value": "item1"
+				}
+			],
+			"newLine": true
+		},
+		"telegramInstance": {
+			"type": "select",
+			"label": "Telegram Instance",
+			"options": [
+				{
+					"label": "Item 1",
+					"value": "item1"
+				}
+			],
+			"newLine": true
+		},
+		"whatsappInstance": {
+			"type": "select",
+			"label": "Whatsapp Instance",
+			"options": [
+				{
+					"label": "Item 1",
+					"value": "item1"
+				}
+			],
+			"newLine": true
+		}
+	}
+}
