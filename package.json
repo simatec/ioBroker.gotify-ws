@@ -65,14 +65,15 @@
     "main.js"
   ],
   "scripts": {
-    "test:js": "mocha --config test/mocharc.custom.json \"{!(node_modules|test)/**/*.test.js,*.test.js,test/**/test!(PackageFiles|Startup).js}\"",
-    "test:package": "mocha test/package --exit",
-    "test:integration": "mocha test/integration --exit",
     "test": "npm run test:package && npm run test:unit",
-    "check": "tsc --noEmit -p tsconfig.check.json",
-    "lint": "eslint .",
-    "translate": "translate-adapter",
-    "release": "release-script"
+    "test:package": "mocha test/package --exit",
+    "test:unit": "mocha test/unit --exit",
+    "test:integration": "mocha test/integration --exit",
+    "release": "release-script",
+    "release-patch": "release-script patch --yes",
+    "release-minor": "release-script minor --yes",
+    "release-major": "release-script major --yes",
+    "translate": "translate-adapter"
   },
   "bugs": {
     "url": "https://github.com/simatec/ioBroker.gotify-ws/issues"
