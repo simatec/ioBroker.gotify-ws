@@ -134,19 +134,15 @@
 			]
 		},
 		"telegramInstance": {
-			"type": "select",
-			"hidden": "data.notificationType !== 'Telegram'",
+			"type": "selectSendTo",
+			"command": "sendToInstance",
+			"data": { "type": "${data.notificationType}" },
+
 			"label": "Telegram Instance",
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
-			"help": "Telegram Instance",
-			"options": [
-				{
-					"label": "Item 1",
-					"value": "item1"
-				}
-			]
+			"help": "Telegram Instance"
 		},
 		"whatsappInstance": {
 			"type": "select",

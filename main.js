@@ -49,6 +49,15 @@ class GotifyWs extends utils.Adapter {
 			this.log.info(`state ${id} deleted`);
 		}
 	}
+	onMessage(obj) {
+		if (obj.command === "sendToInstance") {
+			// Send response in callback if required
+			this.log.info(`sendToInstance - ${JSON.stringify(obj)}`);
+			//if (obj.callback) this.sendTo(obj.from, obj.command,
+			//{ native: { sendTo1Ret: `${obj.message.data1} / ${obj.message.data2}`}},
+			//obj.callback);
+		}
+	}
 }
 
 if (require.main !== module) {
