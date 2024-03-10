@@ -1,7 +1,13 @@
 "use strict";
 
+const WebSocket = require("ws");
+//const axios = require('axios');
 const utils = require("@iobroker/adapter-core");
 const adapterName = require("./package.json").name.split(".").pop();
+
+let ws = null;
+let timer = null;
+let stop = false;
 
 class GotifyWs extends utils.Adapter {
 	/**
@@ -20,8 +26,8 @@ class GotifyWs extends utils.Adapter {
 	}
 
 	async onReady() {
-		// Reset the connection indicator during startup
 		this.setState("info.connection", false, true);
+		this.connectWebSocket();
 	}
 
 	/**
@@ -29,7 +35,16 @@ class GotifyWs extends utils.Adapter {
 	 * @param {() => void} callback
 	 */
 	onUnload(callback) {
+		this.setState("info.connection", false, true);
+
 		try {
+			if (ws) {
+				stop = true;
+				ws.close();
+				ws.terminate();
+				clearTimeout(timer);
+				timer = null;
+			}
 			callback();
 		} catch (e) {
 			callback();
@@ -71,6 +86,52 @@ class GotifyWs extends utils.Adapter {
 			this.log.debug(`sendToInstance - ${JSON.stringify(obj)}`);
 			this.sendTo(obj.from, obj.command, resultInstances, obj.callback);
 		}
+	}
+	async connectWebSocket() {
+		const uri = `ws://${this.config.url}/stream`;
+		ws = new WebSocket(uri, {
+			headers: {
+				"X-Gotify-Key": this.config.token,
+			},
+		});
+
+		ws.on("open", () => {
+			this.setState("info.connection", true, true);
+			this.log.info("WebSocket connected");
+		});
+
+		ws.on("message", async (data) => {
+			const line = JSON.parse(data);
+			const message = line.message.replace(/[`]/g, "");
+			const formatMessage = message.replace(/[']/g, '"');
+			const title = line.title != "" ? `<b>${line.title.replace(/[`]/g, "")}</b>` : "";
+			this.log.info(`${title != "" ? `${title}\n` : ""}${formatMessage}`);
+			/*
+			try {
+				await axios.post(URL, {
+					parse_mode: 'HTML',
+					chat_id: chatid,
+					text: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
+				});
+			} catch (error) {
+				console.error('Error sending message:', error);
+			}
+			*/
+		});
+
+		ws.on("close", () => {
+			this.setState("info.connection", false, true);
+			this.log.info("WebSocket closed");
+			if (stop === false) {
+				timer = setTimeout(this.connectWebSocket, 5000);
+			}
+		});
+
+		ws.on("error", (err) => {
+			this.setState("info.connection", false, true);
+			// @ts-ignore
+			this.log.error("WebSocket error:", err);
+		});
 	}
 }
 
