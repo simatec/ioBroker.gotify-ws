@@ -16,14 +16,25 @@
 			"text": "Gotify Settings",
 			"size": 2
 		},
-		"url": {
+		"ip": {
 			"type": "text",
-			"label": "Gotify URL with Port",
+			"label": "Gotify IP or Domain",
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
-			"help": "Gotify URL with Port",
+			"help": "Gotify IP or Domain",
 			"newLine": true
+		},
+		"port": {
+			"sm": 12,
+			"md": 8,
+			"lg": 4,
+			"min": 1,
+			"max": 65535,
+			"default": 8080,
+			"help": "Gotify Port",
+			"type": "number",
+			"label": "Gotify Port"
 		},
 		"token": {
 			"type": "text",

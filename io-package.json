@@ -71,7 +71,8 @@
 		]
 	},
 	"native": {
-		"url": "",
+		"ip": "",
+		"port": 8080,
 		"token": "",
 		"notificationType": "Telegram",
 		"emailInstance": "",
