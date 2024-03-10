@@ -54,7 +54,8 @@ class GotifyWs extends utils.Adapter {
 	 * @param {{ command: string; from: string; callback: ioBroker.MessageCallback | ioBroker.MessageCallbackInfo | undefined; }} obj
 	 */
 	async onMessage(obj) {
-		if (obj.command === "sendToInstance") {
+		// @ts-ignore
+		if (obj && obj.command === "sendToInstance" && obj.message && obj.message.type) {
 			// eslint-disable-next-line prefer-const
 			let resultInstances = [];
 
