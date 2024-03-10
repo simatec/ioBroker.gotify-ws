@@ -2,6 +2,20 @@
 	"i18n": true,
 	"type": "panel",
 	"items": {
+		"gotifyDesc": {
+			"type": "staticText",
+			"text": "Gotify web socket for connection to various notification systems",
+			"newLine": true,
+			"style": {
+				"fontSize": 24
+			}
+		},
+		"gotifySettings": {
+			"newLine": true,
+			"type": "header",
+			"text": "Gotify Settings",
+			"size": 2
+		},
 		"url": {
 			"type": "text",
 			"label": "Gotify URL with Port",
@@ -19,6 +33,12 @@
 			"lg": 4,
 			"help": "Gotify Token"
 		},
+		"notificationSettings": {
+			"newLine": true,
+			"type": "header",
+			"text": "Notification Settings",
+			"size": 2
+		},
 		"notificationType": {
 			"type": "select",
 			"label": "Notification type",
@@ -29,115 +49,95 @@
 			"options": [
 				{
 					"label": "E-Mail",
-					"value": "E-Mail"
+					"value": "email"
 				},
 				{
 					"label": "Matrix",
-					"value": "Matrix"
+					"value": "matrix"
 				},
 				{
 					"label": "Pushover",
-					"value": "Pushover"
+					"value": "pushover"
 				},
 				{
 					"label": "Discord",
-					"value": "Discord"
+					"value": "discord"
 				},
 				{
 					"label": "Signal",
-					"value": "Signal"
+					"value": "signal-cmb"
 				},
 				{
 					"label": "Telegram",
-					"value": "Telegram"
+					"value": "telegram"
 				},
 				{
 					"label": "Whatsapp",
-					"value": "Whatsapp"
+					"value": "whatsapp-cmb"
 				}
 			],
 			"newLine": true
 		},
 		"emailInstance": {
-			"type": "select",
-			"hidden": "data.notificationType !== 'E-Mail'",
+			"type": "selectSendTo",
+			"command": "sendToInstance",
+			"jsonData": "{ \"type\": \"email\" }",
+			"hidden": "data.notificationType !== 'email'",
 			"label": "E-Mail Instance",
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
-			"help": "E-Mail Instance",
-			"options": [
-				{
-					"label": "Item 1",
-					"value": "item1"
-				}
-			]
+			"help": "E-Mail Instance"
 		},
 		"matrixInstance": {
-			"type": "select",
-			"hidden": "data.notificationType !== 'Matrix'",
+			"type": "selectSendTo",
+			"command": "sendToInstance",
+			"jsonData": "{ \"type\": \"matrix\" }",
+			"hidden": "data.notificationType !== 'matrix'",
 			"label": "Matrix Instance",
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
-			"help": "Matrix Instance",
-			"options": [
-				{
-					"label": "Item 1",
-					"value": "item1"
-				}
-			]
+			"help": "Matrix Instance"
 		},
 		"pushoverInstance": {
-			"type": "select",
-			"hidden": "data.notificationType !== 'Pushover'",
+			"type": "selectSendTo",
+			"command": "sendToInstance",
+			"jsonData": "{ \"type\": \"pushover\" }",
+			"hidden": "data.notificationType !== 'pushover'",
 			"label": "Pushover Instance",
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
-			"help": "Pushover Instance",
-			"options": [
-				{
-					"label": "Item 1",
-					"value": "item1"
-				}
-			]
+			"help": "Pushover Instance"
 		},
 		"discordInstance": {
-			"type": "select",
-			"hidden": "data.notificationType !== 'Discord'",
+			"type": "selectSendTo",
+			"command": "sendToInstance",
+			"jsonData": "{ \"type\": \"discord\" }",
+			"hidden": "data.notificationType !== 'discord'",
 			"label": "Discord Instance",
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
-			"help": "Discord Instance",
-			"options": [
-				{
-					"label": "Item 1",
-					"value": "item1"
-				}
-			]
+			"help": "Discord Instance"
 		},
 		"signalInstance": {
-			"type": "select",
-			"hidden": "data.notificationType !== 'Signal'",
+			"type": "selectSendTo",
+			"command": "sendToInstance",
+			"jsonData": "{ \"type\": \"signal-cmb\" }",
+			"hidden": "data.notificationType !== 'signal-cmb'",
 			"label": "Signal Instance",
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
-			"help": "Signal Instance",
-			"options": [
-				{
-					"label": "Item 1",
-					"value": "item1"
-				}
-			]
+			"help": "Signal Instance"
 		},
 		"telegramInstance": {
 			"type": "selectSendTo",
 			"command": "sendToInstance",
-			"data": { "type": "${data.notificationType}" },
-
+			"jsonData": "{ \"type\": \"telegram\" }",
+			"hidden": "data.notificationType !== 'telegram'",
 			"label": "Telegram Instance",
 			"sm": 12,
 			"md": 8,
@@ -145,19 +145,40 @@
 			"help": "Telegram Instance"
 		},
 		"whatsappInstance": {
-			"type": "select",
-			"hidden": "data.notificationType !== 'Whatsapp'",
+			"type": "selectSendTo",
+			"command": "sendToInstance",
+			"jsonData": "{ \"type\": \"whatsapp-cmb\" }",
+			"hidden": "data.notificationType !== 'whatsapp-cmb'",
 			"label": "Whatsapp Instance",
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
-			"help": "Whatsapp Instance",
-			"options": [
-				{
-					"label": "Item 1",
-					"value": "item1"
-				}
-			]
+			"help": "Whatsapp Instance"
+		},
+		"_helpLine2": {
+			"newLine": true,
+			"type": "divider",
+			"color": "secondary"
+		},
+		"_donateTxt": {
+			"type": "staticText",
+			"text": "If you like this project and would like to support its development, you are welcome to leave a donation.",
+			"newLine": true
+		},
+		"_donate": {
+			"type": "staticImage",
+			"tooltip": "PayPal.Me",
+			"noTranslation": true,
+			"href": "https://paypal.me/mk1676",
+			"src": "https://camo.githubusercontent.com/bf0ea06ef4d9aa4dcb2f2990d99371e7a68e543ec49b788e481568a88c745502/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f70617970616c2d646f6e6174652532302537432532307370656e64656e2d626c75652e737667",
+			"newLine": true
+		},
+		"_githubSponsor": {
+			"type": "staticImage",
+			"tooltip": "GitHub Sponsors",
+			"noTranslation": true,
+			"href": "https://github.com/sponsors/simatec",
+			"src": "https://camo.githubusercontent.com/365a269ff418d24bdf194ab15958a7545e2d9cc794be9e42933e57519e315b51/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f6c6162656c3d53706f6e736f72266d6573736167653d254532253944254134266c6f676f3d47697448756226636f6c6f723d253233666538653836"
 		}
 	}
 }

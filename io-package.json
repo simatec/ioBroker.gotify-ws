@@ -47,6 +47,7 @@
 		"main": "main.js",
 		"icon": "gotify-ws.png",
 		"enabled": true,
+		"messagebox": true,
 		"extIcon": "https://raw.githubusercontent.com/simatec/ioBroker.gotify-ws/main/admin/gotify-ws.png",
 		"readme": "https://github.com/simatec/ioBroker.gotify-ws/blob/main/README.md",
 		"loglevel": "info",

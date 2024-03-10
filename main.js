@@ -15,6 +15,7 @@ class GotifyWs extends utils.Adapter {
 		});
 		this.on("ready", this.onReady.bind(this));
 		this.on("stateChange", this.onStateChange.bind(this));
+		this.on("message", this.onMessage.bind(this));
 		this.on("unload", this.onUnload.bind(this));
 	}
 
@@ -49,13 +50,25 @@ class GotifyWs extends utils.Adapter {
 			this.log.info(`state ${id} deleted`);
 		}
 	}
-	onMessage(obj) {
+	/**
+	 * @param {{ command: string; from: string; callback: ioBroker.MessageCallback | ioBroker.MessageCallbackInfo | undefined; }} obj
+	 */
+	async onMessage(obj) {
 		if (obj.command === "sendToInstance") {
-			// Send response in callback if required
-			this.log.info(`sendToInstance - ${JSON.stringify(obj)}`);
-			//if (obj.callback) this.sendTo(obj.from, obj.command,
-			//{ native: { sendTo1Ret: `${obj.message.data1} / ${obj.message.data2}`}},
-			//obj.callback);
+			// eslint-disable-next-line prefer-const
+			let resultInstances = [];
+
+			// @ts-ignore
+			const instances = await this.getObjectViewAsync("system", "instance", { startkey: `system.adapter.${obj.message.type}.`, endkey: `system.adapter.${obj.message.type}.\u9999` })
+				.catch(err => this.log.error(err));
+
+			if (instances && instances.rows) {
+				instances.rows.forEach(async row => {
+					resultInstances.push({ label: row.id.replace("system.adapter.", ""), value: row.id.replace("system.adapter.", "") });
+				});
+			}
+			this.log.debug(`sendToInstance - ${JSON.stringify(obj)}`);
+			this.sendTo(obj.from, obj.command, resultInstances, obj.callback);
 		}
 	}
 }
