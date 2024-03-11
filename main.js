@@ -1,8 +1,8 @@
-"use strict";
+'use strict';
 
-const WebSocket = require("ws");
-const utils = require("@iobroker/adapter-core");
-const adapterName = require("./package.json").name.split(".").pop();
+const WebSocket = require('ws');
+const utils = require('@iobroker/adapter-core');
+const adapterName = require('./package.json').name.split('.').pop();
 
 let ws = null;
 let timer = null;
@@ -18,14 +18,14 @@ class GotifyWs extends utils.Adapter {
 			// @ts-ignore
 			name: adapterName,
 		});
-		this.on("ready", this.onReady.bind(this));
-		//this.on("stateChange", this.onStateChange.bind(this));
-		this.on("message", this.onMessage.bind(this));
-		this.on("unload", this.onUnload.bind(this));
+		this.on('ready', this.onReady.bind(this));
+		//this.on('stateChange', this.onStateChange.bind(this));
+		this.on('message', this.onMessage.bind(this));
+		this.on('unload', this.onUnload.bind(this));
 	}
 
 	async onReady() {
-		this.setState("info.connection", false, true);
+		this.setState('info.connection', false, true);
 		this.connectWebSocket();
 	}
 
@@ -33,7 +33,7 @@ class GotifyWs extends utils.Adapter {
 	 * @param {() => void} callback
 	 */
 	onUnload(callback) {
-		this.setState("info.connection", false, true);
+		this.setState('info.connection', false, true);
 
 		try {
 			if (ws) {
@@ -70,17 +70,24 @@ class GotifyWs extends utils.Adapter {
 	 */
 	async onMessage(obj) {
 		// @ts-ignore
-		if (obj && obj.command === "sendToInstance" && obj.message && obj.message.type) {
+		if (obj && obj.command === 'sendToInstance' && obj.message && obj.message.type) {
 			// eslint-disable-next-line prefer-const
 			let resultInstances = [];
 
 			// @ts-ignore
-			const instances = await this.getObjectViewAsync("system", "instance", { startkey: `system.adapter.${obj.message.type}.`, endkey: `system.adapter.${obj.message.type}.\u9999` })
-				.catch(err => this.log.error(err));
+			const instances = await this.getObjectViewAsync('system', 'instance', {
+				// @ts-ignore
+				startkey: `system.adapter.${obj.message.type}.`,
+				// @ts-ignore
+				endkey: `system.adapter.${obj.message.type}.\u9999`,
+			}).catch((err) => this.log.error(err));
 
 			if (instances && instances.rows) {
-				instances.rows.forEach(async row => {
-					resultInstances.push({ label: row.id.replace("system.adapter.", ""), value: row.id.replace("system.adapter.", "") });
+				instances.rows.forEach(async (row) => {
+					resultInstances.push({
+						label: row.id.replace('system.adapter.', ''),
+						value: row.id.replace('system.adapter.', ''),
+					});
 				});
 			}
 			this.log.debug(`sendToInstance - ${JSON.stringify(obj)}`);
@@ -94,36 +101,36 @@ class GotifyWs extends utils.Adapter {
 
 			ws = new WebSocket(uri, {
 				headers: {
-					"X-Gotify-Key": this.config.token,
+					'X-Gotify-Key': this.config.token,
 				},
 			});
 
-			ws.on("open", () => {
-				this.setState("info.connection", true, true);
-				this.log.info("WebSocket connected");
+			ws.on('open', () => {
+				this.setState('info.connection', true, true);
+				this.log.info('WebSocket connected');
 			});
 
-			ws.on("message", async (data) => {
+			ws.on('message', async (data) => {
 				const line = JSON.parse(data);
-				const message = line.message.replace(/[`]/g, "");
+				const message = line.message.replace(/[`]/g, '');
 				const formatMessage = message.replace(/[']/g, '"');
-				const title = line.title != "" ? `<b>${line.title.replace(/[`]/g, "")}</b>` : "";
+				const title = line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '';
 
-				this.log.info(`${title != "" ? `${title}\n` : ""}${formatMessage}`);
+				this.log.info(`${title != '' ? `${title}\n` : ''}${formatMessage}`);
 			});
 
-			ws.on("close", () => {
-				this.setState("info.connection", false, true);
-				this.log.info("WebSocket closed");
+			ws.on('close', () => {
+				this.setState('info.connection', false, true);
+				this.log.info('WebSocket closed');
 				if (stop === false) {
 					timer = setTimeout(this.connectWebSocket, 5000);
 				}
 			});
 
-			ws.on("error", (err) => {
-				this.setState("info.connection", false, true);
+			ws.on('error', (err) => {
+				this.setState('info.connection', false, true);
 				// @ts-ignore
-				this.log.error("WebSocket error:", err);
+				this.log.error('WebSocket error:', err);
 			});
 		}
 	}

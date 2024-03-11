@@ -115,10 +115,7 @@ Please refer to the [`dev-server` documentation](https://github.com/ioBroker/dev
 
 ## Changelog
 
-<!--
-	Placeholder for the next version (at the beginning of the line):
-	### **WORK IN PROGRESS**
--->
+<!-- ### **WORK IN PROGRESS** -->
 
 ### **WORK IN PROGRESS**
 
