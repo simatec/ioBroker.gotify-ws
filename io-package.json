@@ -81,7 +81,12 @@
 		"discordInstance": "",
 		"signalInstance": "",
 		"telegramInstance": "",
-		"whatsappInstance": ""
+		"whatsappInstance": "",
+		"emailReceiver": "",
+		"emailSender": "",
+		"pushoverDeviceID": "",
+		"pushoverSilentNotice": false,
+		"discordTarget": ""
 	},
 	"objects": [],
 	"instanceObjects": [

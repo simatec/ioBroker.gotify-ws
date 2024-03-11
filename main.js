@@ -112,11 +112,14 @@ class GotifyWs extends utils.Adapter {
 
 			ws.on('message', async (data) => {
 				const line = JSON.parse(data);
+				this.pushMessage(line);
+				/*
 				const message = line.message.replace(/[`]/g, '');
 				const formatMessage = message.replace(/[']/g, '"');
 				const title = line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '';
 
 				this.log.info(`${title != '' ? `${title}\n` : ''}${formatMessage}`);
+				*/
 			});
 
 			ws.on('close', () => {
@@ -132,6 +135,168 @@ class GotifyWs extends utils.Adapter {
 				// @ts-ignore
 				this.log.error('WebSocket error:', err);
 			});
+		}
+	}
+
+	async pushMessage(line) {
+		if (this.config.notificationType) {
+			this.log.info(this.config.notificationType);
+			switch (this.config.notificationType) {
+				case 'telegram':
+					if (this.config.telegramInstance) {
+						const message = line.message.replace(/[`]/g, '');
+						const formatMessage = message.replace(/[']/g, '"');
+						const title =
+							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : 'Gotifi WS Message';
+
+						try {
+							this.sendTo(this.config.telegramInstance, 'send', {
+								text: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
+							});
+						} catch (err) {
+							this.log.warn(`Error sending Telegram message: ${err}`);
+						}
+					}
+					break;
+				case 'email':
+					if (this.config.emailInstance && this.config.emailReceiver && this.config.emailSender) {
+						const message = line.message.replace(/[`]/g, '');
+						const formatMessage = message.replace(/[']/g, '"');
+						const title =
+							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : 'Gotifi WS Message';
+
+						try {
+							this.sendTo(this.config.emailInstance, 'send', {
+								text: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
+								to: this.config.emailReceiver,
+								subject: title,
+								from: this.config.emailSender,
+							});
+						} catch (err) {
+							this.log.warn(`Error sending E-Mail message: ${err}`);
+						}
+					}
+					break;
+				case 'pushover':
+					if (
+						this.config.pushoverSilentNotice === true &&
+						this.config.pushoverInstance &&
+						this.config.pushoverDeviceID
+					) {
+						const message = line.message.replace(/[`]/g, '');
+						const formatMessage = message.replace(/[']/g, '"');
+						const title =
+							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : 'Gotifi WS Message';
+
+						try {
+							this.sendTo(this.config.pushoverInstance, 'send', {
+								message: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
+								sound: '',
+								priority: -1,
+								title: title,
+								device: this.config.pushoverDeviceID,
+							});
+						} catch (err) {
+							this.log.warn(`Error sending Pushover message: ${err}`);
+						}
+					} else if (this.config.pushoverInstance && this.config.pushoverDeviceID) {
+						const message = line.message.replace(/[`]/g, '');
+						const formatMessage = message.replace(/[']/g, '"');
+						const title =
+							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : 'Gotifi WS Message';
+
+						try {
+							this.sendTo(this.config.pushoverInstance, 'send', {
+								message: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
+								sound: '',
+								title: title,
+								device: this.config.pushoverDeviceID,
+							});
+						} catch (err) {
+							this.log.warn(`Error sending Pushover message: ${err}`);
+						}
+					}
+					break;
+				case 'whatsapp-cmb':
+					if (this.config.whatsappInstance) {
+						const message = line.message.replace(/[`]/g, '');
+						const formatMessage = message.replace(/[']/g, '"');
+						const title = line.title != '' ? `*${line.title.replace(/[`]/g, '')}*` : '*Gotifi WS Message*';
+
+						try {
+							this.sendTo(this.config.whatsappInstance, 'send', {
+								text: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
+							});
+						} catch (err) {
+							this.log.warn(`Error sending WhatsApp message: ${err}`);
+						}
+					}
+					break;
+				case 'signal-cmb':
+					if (this.config.signalInstance) {
+						const message = line.message.replace(/[`]/g, '');
+						const formatMessage = message.replace(/[']/g, '"');
+						const title =
+							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : 'Gotifi WS Message';
+
+						try {
+							this.sendTo(this.config.signalInstance, 'send', {
+								text: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
+							});
+						} catch (err) {
+							this.log.warn(`Error sending Signal message: ${err}`);
+						}
+					}
+					break;
+				case 'matrix':
+					if (this.config.matrixInstance) {
+						const message = line.message.replace(/[`]/g, '');
+						const formatMessage = message.replace(/[']/g, '"');
+						const title =
+							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : 'Gotifi WS Message';
+
+						try {
+							this.sendTo(this.config.matrixInstance, {
+								text: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
+							});
+						} catch (err) {
+							this.log.warn(`Error sending Matrix message: ${err}`);
+						}
+					}
+					break;
+				case 'discord':
+					if (this.config.discordInstance && this.config.discordTarget) {
+						const message = line.message.replace(/[`]/g, '');
+						const formatMessage = message.replace(/[']/g, '"');
+						const title =
+							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : 'Gotifi WS Message';
+
+						if (this.config.discordTarget.match(/^\d+$/)) {
+							// send to a single user
+							try {
+								this.sendTo(this.config.discordInstance, 'sendMessage', {
+									userId: this.config.discordTarget,
+									content: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
+								});
+							} catch (err) {
+								this.log.warn(`Error sending Discord message: ${err}`);
+							}
+						} else if (this.config.discordTarget.match(/^\d+\/\d+$/)) {
+							// send to a server channel
+							const [serverId, channelId] = this.config.discordTarget.split('/');
+							try {
+								this.sendTo(this.config.discordInstance, 'sendMessage', {
+									serverId,
+									channelId,
+									content: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
+								});
+							} catch (err) {
+								this.log.warn(`Error sending Discord message: ${err}`);
+							}
+						}
+					}
+					break;
+			}
 		}
 	}
 }
