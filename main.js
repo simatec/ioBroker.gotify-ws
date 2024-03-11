@@ -19,7 +19,6 @@ class GotifyWs extends utils.Adapter {
 			name: adapterName,
 		});
 		this.on('ready', this.onReady.bind(this));
-		//this.on('stateChange', this.onStateChange.bind(this));
 		this.on('message', this.onMessage.bind(this));
 		this.on('unload', this.onUnload.bind(this));
 	}
@@ -50,48 +49,80 @@ class GotifyWs extends utils.Adapter {
 	}
 
 	/**
-	 * @param {string} id
-	 * @param {ioBroker.State | null | undefined} state
-	 */
-	/*
-	onStateChange(id, state) {
-		if (state) {
-			// The state was changed
-			this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
-		} else {
-			// The state was deleted
-			this.log.info(`state ${id} deleted`);
-		}
-	}
-	*/
-
-	/**
 	 * @param {{ command: string; from: string; callback: ioBroker.MessageCallback | ioBroker.MessageCallbackInfo | undefined; }} obj
 	 */
 	async onMessage(obj) {
-		// @ts-ignore
-		if (obj && obj.command === 'sendToInstance' && obj.message && obj.message.type) {
-			// eslint-disable-next-line prefer-const
-			let resultInstances = [];
-
-			// @ts-ignore
-			const instances = await this.getObjectViewAsync('system', 'instance', {
+		switch (obj.command) {
+			case 'sendToInstance':
 				// @ts-ignore
-				startkey: `system.adapter.${obj.message.type}.`,
-				// @ts-ignore
-				endkey: `system.adapter.${obj.message.type}.\u9999`,
-			}).catch((err) => this.log.error(err));
+				if (obj && obj.command === 'sendToInstance' && obj.message && obj.message.type) {
+					// eslint-disable-next-line prefer-const
+					let resultInstances = [];
 
-			if (instances && instances.rows) {
-				instances.rows.forEach(async (row) => {
-					resultInstances.push({
-						label: row.id.replace('system.adapter.', ''),
-						value: row.id.replace('system.adapter.', ''),
-					});
-				});
-			}
-			this.log.debug(`sendToInstance - ${JSON.stringify(obj)}`);
-			this.sendTo(obj.from, obj.command, resultInstances, obj.callback);
+					// @ts-ignore
+					const instances = await this.getObjectViewAsync('system', 'instance', {
+						// @ts-ignore
+						startkey: `system.adapter.${obj.message.type}.`,
+						// @ts-ignore
+						endkey: `system.adapter.${obj.message.type}.\u9999`,
+					}).catch((err) => this.log.error(err));
+
+					if (instances && instances.rows && instances.rows.length != 0) {
+						instances.rows.forEach(async (row) => {
+							resultInstances.push({
+								label: row.id.replace('system.adapter.', ''),
+								value: row.id.replace('system.adapter.', ''),
+							});
+						});
+					} else {
+						resultInstances.push({
+							label: 'none',
+							value: 'none',
+						});
+					}
+					this.log.debug(`sendToInstance - ${JSON.stringify(obj)}`);
+					this.sendTo(obj.from, obj.command, resultInstances, obj.callback);
+				}
+				break;
+
+			case 'sendToTelegramUser':
+				// eslint-disable-next-line no-case-declarations
+				let useUsername = false;
+
+				// @ts-ignore
+				if (obj && obj.command === 'sendToTelegramUser' && obj.message && obj.message.instance) {
+					// @ts-ignore
+					const inst = obj.message.instance ? obj.message.instance : this.config.telegramInstance;
+					const userList = await this.getForeignStateAsync(`${inst}.communicate.users`);
+					const configTelegram = await this.getForeignObjectAsync(`system.adapter.${inst}`);
+
+					if (configTelegram && configTelegram.native) {
+						const native = configTelegram.native;
+						useUsername = native.useUsername;
+					}
+
+					// eslint-disable-next-line prefer-const
+					let resultUser = [{ label: 'All Receiver', value: 'allTelegramUsers' }];
+
+					if (userList && userList.val) {
+						// @ts-ignore
+						const users = JSON.parse(userList.val);
+
+						for (const i in users) {
+							resultUser.push({
+								label: useUsername === true ? users[i].userName : users[i].firstName,
+								value: useUsername === true ? users[i].userName : users[i].firstName,
+							});
+						}
+
+						try {
+							this.sendTo(obj.from, obj.command, resultUser, obj.callback);
+						} catch (err) {
+							this.log.error(`Cannot parse stored user IDs from Telegram: ${err}`);
+						}
+					}
+				}
+				break;
 		}
 	}
 
@@ -113,13 +144,6 @@ class GotifyWs extends utils.Adapter {
 			ws.on('message', async (data) => {
 				const line = JSON.parse(data);
 				this.pushMessage(line);
-				/*
-				const message = line.message.replace(/[`]/g, '');
-				const formatMessage = message.replace(/[']/g, '"');
-				const title = line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '';
-
-				this.log.info(`${title != '' ? `${title}\n` : ''}${formatMessage}`);
-				*/
 			});
 
 			ws.on('close', () => {
@@ -135,15 +159,20 @@ class GotifyWs extends utils.Adapter {
 				// @ts-ignore
 				this.log.error('WebSocket error:', err);
 			});
+		} else {
+			this.log.error('WebSocket error: Please check your Configuration');
 		}
 	}
 
 	async pushMessage(line) {
 		if (this.config.notificationType) {
-			this.log.info(this.config.notificationType);
 			switch (this.config.notificationType) {
 				case 'telegram':
-					if (this.config.telegramInstance) {
+					if (
+						this.config.telegramUser &&
+						this.config.telegramUser === 'allTelegramUsers' &&
+						this.config.telegramInstance
+					) {
 						const message = line.message.replace(/[`]/g, '');
 						const formatMessage = message.replace(/[']/g, '"');
 						const title =
@@ -297,6 +326,8 @@ class GotifyWs extends utils.Adapter {
 					}
 					break;
 			}
+		} else {
+			this.log.error('Push-Message error: Please check your Configuration');
 		}
 	}
 }

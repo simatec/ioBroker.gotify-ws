@@ -100,6 +100,25 @@
 			"lg": 4,
 			"help": "E-Mail Instance"
 		},
+		"emailReceiver": {
+			"type": "text",
+			"hidden": "data.notificationType !== 'email'",
+			"label": "email Receiver",
+			"sm": 12,
+			"md": 8,
+			"lg": 4,
+			"help": "email Receiver",
+			"newLine": true
+		},
+		"emailSender": {
+			"type": "text",
+			"hidden": "data.notificationType !== 'email'",
+			"label": "email Sender",
+			"sm": 12,
+			"md": 8,
+			"lg": 4,
+			"help": "email Sender"
+		},
 		"matrixInstance": {
 			"type": "selectSendTo",
 			"command": "sendToInstance",
@@ -122,6 +141,24 @@
 			"lg": 4,
 			"help": "Pushover Instance"
 		},
+		"pushoverDeviceID": {
+			"type": "text",
+			"hidden": "data.notificationType !== 'pushover'",
+			"label": "Device ID",
+			"sm": 12,
+			"md": 8,
+			"lg": 4,
+			"help": "Device ID"
+		},
+		"pushoverSilentNotice": {
+			"newLine": true,
+			"type": "checkbox",
+			"hidden": "data.notificationType !== 'pushover'",
+			"label": "Device ID",
+			"sm": 12,
+			"md": 8,
+			"lg": 4
+		},
 		"discordInstance": {
 			"type": "selectSendTo",
 			"command": "sendToInstance",
@@ -132,6 +169,17 @@
 			"md": 8,
 			"lg": 4,
 			"help": "Discord Instance"
+		},
+		"discordTarget": {
+			"type": "selectSendTo",
+			"command": "sendToDiscordTarget",
+			"jsonData": "{ \"instance\": \"${data.discordInstance}\" }",
+			"hidden": "data.notificationType !== 'discord'",
+			"label": "discord Target",
+			"sm": 12,
+			"md": 8,
+			"lg": 4,
+			"help": "discord Target"
 		},
 		"signalInstance": {
 			"type": "selectSendTo",
@@ -154,6 +202,17 @@
 			"md": 8,
 			"lg": 4,
 			"help": "Telegram Instance"
+		},
+		"telegramUser": {
+			"type": "selectSendTo",
+			"command": "sendToTelegramUser",
+			"jsonData": "{ \"instance\": \"${data.telegramInstance}\" }",
+			"hidden": "data.notificationType !== 'telegram'",
+			"label": "Telegram User",
+			"sm": 12,
+			"md": 8,
+			"lg": 4,
+			"help": "Telegram User"
 		},
 		"whatsappInstance": {
 			"type": "selectSendTo",
