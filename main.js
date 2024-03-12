@@ -205,6 +205,24 @@ class GotifyWs extends utils.Adapter {
 						} catch (err) {
 							this.log.warn(`Error sending Telegram message: ${err}`);
 						}
+					} else if (
+						this.config.telegramUser &&
+						this.config.telegramUser != 'allTelegramUsers' &&
+						this.config.telegramInstance
+					) {
+						const message = line.message.replace(/[`]/g, '');
+						const formatMessage = message.replace(/[']/g, '"');
+						const title =
+							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : 'Gotifi WS Message';
+
+						try {
+							this.sendTo(this.config.telegramInstance, 'send', {
+								user: this.config.telegramUser,
+								text: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
+							});
+						} catch (err) {
+							this.log.warn(`Error sending Telegram message: ${err}`);
+						}
 					}
 					break;
 				case 'email':

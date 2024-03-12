@@ -7,7 +7,7 @@
 			"text": "Gotify web socket for connection to various notification systems",
 			"newLine": true,
 			"style": {
-				"fontSize": 24
+				"fontSize": 20
 			}
 		},
 		"gotifySettings": {
