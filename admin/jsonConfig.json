@@ -23,6 +23,9 @@
 			"md": 8,
 			"lg": 4,
 			"help": "Gotify IP or Domain",
+			"validator": "data.ip",
+			"validatorNoSaveOnError": true,
+			"placeholder": "10.250.1.10",
 			"newLine": true
 		},
 		"port": {
@@ -31,9 +34,11 @@
 			"lg": 4,
 			"min": 1,
 			"max": 65535,
-			"default": 8080,
 			"help": "Gotify Port",
 			"type": "number",
+			"validator": "data.port",
+			"validatorNoSaveOnError": true,
+			"placeholder": "8080",
 			"label": "Gotify Port"
 		},
 		"token": {
@@ -42,6 +47,9 @@
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
+			"validator": "data.token",
+			"validatorNoSaveOnError": true,
+			"placeholder": "XXXxxXXXxxxXXXX",
 			"help": "Gotify Token"
 		},
 		"notificationSettings": {
@@ -108,6 +116,9 @@
 			"md": 8,
 			"lg": 4,
 			"help": "email Receiver",
+			"validator": "data.emailReceiver",
+			"validatorNoSaveOnError": true,
+			"placeholder": "xxxx@xxxx.com",
 			"newLine": true
 		},
 		"emailSender": {
@@ -117,6 +128,9 @@
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
+			"validator": "data.emailSender",
+			"validatorNoSaveOnError": true,
+			"placeholder": "xxxx@xxxx.com",
 			"help": "email Sender"
 		},
 		"matrixInstance": {
