@@ -135,6 +135,25 @@ class GotifyWs extends utils.Adapter {
 				// @ts-ignore
 				if (obj && obj.command === 'sendToDiscordTarget' && obj.message && obj.message.instance) {
 					let resultTarget = [{ label: this._('none', systemLang), value: 'none' }];
+					// @ts-ignore
+					const targetList = await this.sendToAsync(obj.message.instance, 'getNotificationTargets', {});
+
+					if (Array.isArray(targetList)) {
+						for (const i in targetList) {
+							resultTarget.push({
+								label: targetList[i].value,
+								value: targetList[i].value,
+							});
+						}
+					}
+
+					try {
+						this.sendTo(obj.from, obj.command, resultTarget, obj.callback);
+					} catch (err) {
+						this.log.error(`Cannot parse stored user IDs from Discord: ${err}`);
+					}
+				} else if (obj && obj.command === 'sendToDiscordTarget') {
+					let resultTarget = [{ label: this._('none', systemLang), value: 'none' }];
 
 					try {
 						this.sendTo(obj.from, obj.command, resultTarget, obj.callback);
