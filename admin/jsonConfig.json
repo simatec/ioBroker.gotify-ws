@@ -111,11 +111,11 @@
 		"emailReceiver": {
 			"type": "text",
 			"hidden": "data.notificationType !== 'email'",
-			"label": "email Receiver",
+			"label": "E-Mail Receiver",
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
-			"help": "email Receiver",
+			"help": "E-Mail Receiver",
 			"validator": "data.emailReceiver",
 			"validatorNoSaveOnError": true,
 			"placeholder": "xxxx@xxxx.com",
@@ -124,14 +124,14 @@
 		"emailSender": {
 			"type": "text",
 			"hidden": "data.notificationType !== 'email'",
-			"label": "email Sender",
+			"label": "E-Mail Sender",
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
 			"validator": "data.emailSender",
 			"validatorNoSaveOnError": true,
 			"placeholder": "xxxx@xxxx.com",
-			"help": "email Sender"
+			"help": "E-Mail Sender"
 		},
 		"matrixInstance": {
 			"type": "selectSendTo",
@@ -168,7 +168,7 @@
 			"newLine": true,
 			"type": "checkbox",
 			"hidden": "data.notificationType !== 'pushover'",
-			"label": "Device ID",
+			"label": "Silent Notice",
 			"sm": 12,
 			"md": 8,
 			"lg": 4
@@ -189,11 +189,12 @@
 			"command": "sendToDiscordTarget",
 			"jsonData": "{ \"instance\": \"${data.discordInstance}\" }",
 			"hidden": "data.notificationType !== 'discord'",
-			"label": "discord Target",
+			"label": "Discord Target",
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
-			"help": "discord Target"
+			"default": "none",
+			"help": "Discord Target"
 		},
 		"signalInstance": {
 			"type": "selectSendTo",
@@ -223,6 +224,7 @@
 			"jsonData": "{ \"instance\": \"${data.telegramInstance}\" }",
 			"hidden": "data.notificationType !== 'telegram'",
 			"label": "Telegram User",
+			"noTranslation": false,
 			"sm": 12,
 			"md": 8,
 			"lg": 4,

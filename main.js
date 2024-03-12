@@ -1,9 +1,11 @@
+/* eslint-disable prefer-const */
 'use strict';
 
 const WebSocket = require('ws');
 const utils = require('@iobroker/adapter-core');
 const adapterName = require('./package.json').name.split('.').pop();
 
+let systemLang = 'de'; // system language
 let ws = null;
 let timer = null;
 let stop = false;
@@ -24,6 +26,12 @@ class GotifyWs extends utils.Adapter {
 	}
 
 	async onReady() {
+		const sysLang = await this.getForeignObjectAsync('system.config');
+
+		if (sysLang && sysLang.common && sysLang.common.language) {
+			systemLang = sysLang.common.language;
+		}
+
 		this.setState('info.connection', false, true);
 		this.connectWebSocket();
 	}
@@ -102,7 +110,7 @@ class GotifyWs extends utils.Adapter {
 					}
 
 					// eslint-disable-next-line prefer-const
-					let resultUser = [{ label: 'All Receiver', value: 'allTelegramUsers' }];
+					let resultUser = [{ label: this._('All Receiver', systemLang), value: 'allTelegramUsers' }];
 
 					if (userList && userList.val) {
 						// @ts-ignore
@@ -120,6 +128,18 @@ class GotifyWs extends utils.Adapter {
 						} catch (err) {
 							this.log.error(`Cannot parse stored user IDs from Telegram: ${err}`);
 						}
+					}
+				}
+				break;
+			case 'sendToDiscordTarget':
+				// @ts-ignore
+				if (obj && obj.command === 'sendToDiscordTarget' && obj.message && obj.message.instance) {
+					let resultTarget = [{ label: this._('none', systemLang), value: 'none' }];
+
+					try {
+						this.sendTo(obj.from, obj.command, resultTarget, obj.callback);
+					} catch (err) {
+						this.log.error(`Cannot parse stored user IDs from Discord: ${err}`);
 					}
 				}
 				break;
@@ -328,6 +348,16 @@ class GotifyWs extends utils.Adapter {
 			}
 		} else {
 			this.log.error('Push-Message error: Please check your Configuration');
+		}
+	}
+	_(word, systemLang) {
+		const translations = require(`./admin/i18n/${systemLang ? systemLang : 'en'}/translations.json`);
+
+		if (translations[word]) {
+			return translations[word];
+		} else {
+			console.warn('Please translate in translations.json: ' + word);
+			return word;
 		}
 	}
 }
