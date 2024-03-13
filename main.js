@@ -281,6 +281,7 @@ class GotifyWs extends utils.Adapter {
 								priority: -1,
 								title: title,
 								device: this.config.pushoverDeviceID,
+								html: 1
 							});
 						} catch (err) {
 							this.log.warn(`Error sending Pushover message: ${err}`);
@@ -297,6 +298,7 @@ class GotifyWs extends utils.Adapter {
 								sound: '',
 								title: title,
 								device: this.config.pushoverDeviceID,
+								html: 1
 							});
 						} catch (err) {
 							this.log.warn(`Error sending Pushover message: ${err}`);
