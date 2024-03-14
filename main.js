@@ -215,10 +215,11 @@ class GotifyWs extends utils.Adapter {
 						const message = line.message.replace(/[`]/g, '');
 						const formatMessage = message.replace(/[']/g, '"');
 						const title =
-							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : 'Gotifi WS Message';
+							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '<b>Gotifi WS Message</b>';
 
 						try {
 							this.sendTo(this.config.telegramInstance, 'send', {
+								parse_mode: 'HTML',
 								text: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
 							});
 						} catch (err) {
@@ -232,11 +233,12 @@ class GotifyWs extends utils.Adapter {
 						const message = line.message.replace(/[`]/g, '');
 						const formatMessage = message.replace(/[']/g, '"');
 						const title =
-							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : 'Gotifi WS Message';
+							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '<b>Gotifi WS Message</b>';
 
 						try {
 							this.sendTo(this.config.telegramInstance, 'send', {
 								user: this.config.telegramUser,
+								parse_mode: 'HTML',
 								text: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
 							});
 						} catch (err) {
@@ -248,8 +250,7 @@ class GotifyWs extends utils.Adapter {
 					if (this.config.emailInstance && this.config.emailReceiver && this.config.emailSender) {
 						const message = line.message.replace(/[`]/g, '');
 						const formatMessage = message.replace(/[']/g, '"');
-						const title =
-							line.title != '' ? line.title.replace(/[`]/g, '') : 'Gotifi WS Message';
+						const title = line.title != '' ? line.title.replace(/[`]/g, '') : 'Gotifi WS Message';
 
 						try {
 							this.sendTo(this.config.emailInstance, 'send', {
@@ -281,7 +282,7 @@ class GotifyWs extends utils.Adapter {
 								priority: -1,
 								title: title,
 								device: this.config.pushoverDeviceID,
-								html: 1
+								html: 1,
 							});
 						} catch (err) {
 							this.log.warn(`Error sending Pushover message: ${err}`);
@@ -298,7 +299,7 @@ class GotifyWs extends utils.Adapter {
 								sound: '',
 								title: title,
 								device: this.config.pushoverDeviceID,
-								html: 1
+								html: 1,
 							});
 						} catch (err) {
 							this.log.warn(`Error sending Pushover message: ${err}`);
