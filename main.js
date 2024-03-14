@@ -395,7 +395,7 @@ class GotifyWs extends utils.Adapter {
 		if (translations[word]) {
 			return translations[word];
 		} else {
-			console.warn('Please translate in translations.json: ' + word);
+			this.log.debug('Please translate in translations.json: ' + word);
 			return word;
 		}
 	}
