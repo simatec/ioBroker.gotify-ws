@@ -273,7 +273,7 @@ class GotifyWs extends utils.Adapter {
 						const message = line.message.replace(/[`]/g, '');
 						const formatMessage = message.replace(/[']/g, '"');
 						const title =
-							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : 'Gotifi WS Message';
+							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '<b>Gotifi WS Message</b>';
 
 						try {
 							this.sendTo(this.config.pushoverInstance, 'send', {
@@ -291,7 +291,7 @@ class GotifyWs extends utils.Adapter {
 						const message = line.message.replace(/[`]/g, '');
 						const formatMessage = message.replace(/[']/g, '"');
 						const title =
-							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : 'Gotifi WS Message';
+							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '<b>Gotifi WS Message</b>';
 
 						try {
 							this.sendTo(this.config.pushoverInstance, 'send', {
