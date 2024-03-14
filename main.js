@@ -325,8 +325,7 @@ class GotifyWs extends utils.Adapter {
 					if (this.config.signalInstance) {
 						const message = line.message.replace(/[`]/g, '');
 						const formatMessage = message.replace(/[']/g, '"');
-						const title =
-							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : 'Gotifi WS Message';
+						const title = line.title != '' ? line.title.replace(/[`]/g, '') : 'Gotifi WS Message';
 
 						try {
 							this.sendTo(this.config.signalInstance, 'send', {
