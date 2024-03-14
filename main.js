@@ -84,7 +84,7 @@ class GotifyWs extends utils.Adapter {
 						});
 					} else {
 						resultInstances.push({
-							label: 'none',
+							label: this._('none', systemLang),
 							value: 'none',
 						});
 					}
