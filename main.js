@@ -341,11 +341,11 @@ class GotifyWs extends utils.Adapter {
 						const message = line.message.replace(/[`]/g, '');
 						const formatMessage = message.replace(/[']/g, '"');
 						const title =
-							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : 'Gotifi WS Message';
+							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '<b>Gotifi WS Message</b>';
 
 						try {
 							this.sendTo(this.config.matrixInstance, {
-								text: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
+								html: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
 							});
 						} catch (err) {
 							this.log.warn(`Error sending Matrix message: ${err}`);
