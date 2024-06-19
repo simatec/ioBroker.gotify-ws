@@ -27,99 +27,51 @@ This adapter uses the service `Sentry.io` to automatically report exceptions and
 
 ## gotify-ws adapter for ioBroker
 
-Gotify web socket for connection to various notification systems
+Gotify-WS is an adapter that establishes a websocket connection to a Gotify server and can therefore receive and process all messages from the server.
 
-## Developer manual
+The background for me was a missing connection to all common systems.
+For example, there is no proper app for IOS.
 
-This section is intended for the developer. It can be deleted later.
+However, as Gotify is becoming more and more popular and has now also found its way into many systems such as Proxmox as a notification service, I needed a solution.
 
-### DISCLAIMER
+This is where Gotify-WS comes into play.
+Gotify-WS receives messages and forwards them to a notification service supported by ioBroker. This means that messages can be forwarded to Telegram, for example.
 
-Please make sure that you consider copyrights and trademarks when you use names or logos of a company and add a disclaimer to your README.
-You can check other adapters for examples or ask in the developer community. Using a name or logo of a company without permission may cause legal problems for you.
+Spotify-WS currently supports the following notification services
 
-### Getting started
+* e-mail
+* Matrix
+* Pushover
+* Discord
+* Signal
+* Telegram
+* Whatsapp
 
-You are almost done, only a few steps left:
+---
 
-1. Clone the repository from GitHub to a directory on your PC:
+## Adapter configuration
 
-    ```bash
-    git clone https://github.com/simatec/ioBroker.gotify-ws
-    ```
+The configuration of the adapter is very simple.
 
-1. Head over to [main.js](main.js) and start programming!
+You create a new client on your Gotify server and copy the generated token of the client.
+You enter this in the Gotify-WS adapter configuration.
+Gotify-WS also needs the IP address or domain and the port of the Gotify server.
 
-### Best Practices
+This establishes a connection and the adapter can receive all incoming messages from the Gotify server.
 
-We've collected some [best practices](https://github.com/ioBroker/ioBroker.repositories#development-and-coding-best-practices) regarding ioBroker development and coding in general. If you're new to ioBroker or Node.js, you should
-check them out. If you're already experienced, you should also take a look at them - you might learn something new :)
+You can then configure a notification service of your choice for forwarding.
 
-### Scripts in `package.json`
-
-Several npm scripts are predefined for your convenience. You can run them using `npm run <scriptname>`
-| Script name | Description |
-|-------------|-------------|
-| `test:js` | Executes the tests you defined in `*.test.js` files. |
-| `test:package` | Ensures your `package.json` and `io-package.json` are valid. |
-| `test:integration` | Tests the adapter startup with an actual instance of ioBroker. |
-| `test` | Performs a minimal test run on package files and your tests. |
-| `check` | Performs a type-check on your code (without compiling anything). |
-| `lint` | Runs `ESLint` to check your code for formatting errors and potential bugs. |
-| `translate` | Translates texts in your adapter to all required languages, see [`@iobroker/adapter-dev`](https://github.com/ioBroker/adapter-dev#manage-translations) for more details. |
-| `release` | Creates a new release, see [`@alcalzone/release-script`](https://github.com/AlCalzone/release-script#usage) for more details. |
-
-### Writing tests
-
-When done right, testing code is invaluable, because it gives you the
-confidence to change your code while knowing exactly if and when
-something breaks. A good read on the topic of test-driven development
-is https://hackernoon.com/introduction-to-test-driven-development-tdd-61a13bc92d92.
-Although writing tests before the code might seem strange at first, but it has very
-clear upsides.
-
-The template provides you with basic tests for the adapter startup and package files.
-It is recommended that you add your own tests into the mix.
-
-### Publishing the adapter
-
-Using GitHub Actions, you can enable automatic releases on npm whenever you push a new git tag that matches the form
-`v<major>.<minor>.<patch>`. We **strongly recommend** that you do. The necessary steps are described in `.github/workflows/test-and-release.yml`.
-
-Since you installed the release script, you can create a new
-release simply by calling:
-
-```bash
-npm run release
-```
-
-Additional command line options for the release script are explained in the
-[release-script documentation](https://github.com/AlCalzone/release-script#command-line).
-
-To get your adapter released in ioBroker, please refer to the documentation
-of [ioBroker.repositories](https://github.com/ioBroker/ioBroker.repositories#requirements-for-adapter-to-get-added-to-the-latest-repository).
-
-### Test the adapter manually with dev-server
-
-Please use `dev-server` to test and debug your adapter.
-
-You may install and start `dev-server` by calling from your dev directory:
-
-```bash
-npm install --global @iobroker/dev-server
-dev-server setup
-dev-server watch
-```
-
-Please refer to the [`dev-server` documentation](https://github.com/ioBroker/dev-server#readme) for more details.
-
+---
+<!-- ### **WORK IN PROGRESS** -->
 ## Changelog
 
-<!-- ### **WORK IN PROGRESS** -->
-
 ### **WORK IN PROGRESS**
+* (simatec) First Release
 
--   (simatec) initial release
+### 0.0.1 (2024-03-15)
+* (simatec) initial release
+
+---
 
 ## License
 
