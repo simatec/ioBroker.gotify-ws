@@ -98,6 +98,7 @@
     "compact": true,
     "connectionType": "local",
     "dataSource": "poll",
+    "tier": 2,
     "adminUI": {
       "config": "json"
     },
