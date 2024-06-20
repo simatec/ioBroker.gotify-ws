@@ -86,7 +86,6 @@
       "type": "free"
     },
     "platform": "Javascript/Node.js",
-    "main": "main.js",
     "icon": "gotify-ws.png",
     "enabled": true,
     "messagebox": true,
@@ -116,7 +115,6 @@
   "native": {
     "ip": "",
     "port": 8080,
-    "token": "",
     "notificationType": "telegram",
     "emailInstance": "email.0",
     "matrixInstance": "matrix.0",
@@ -132,6 +130,12 @@
     "pushoverSilentNotice": false,
     "discordTarget": "none"
   },
+  "encryptedNative": [
+    "token"
+  ],
+  "protectedNative": [
+    "token"
+  ],
   "objects": [],
   "instanceObjects": [
     {

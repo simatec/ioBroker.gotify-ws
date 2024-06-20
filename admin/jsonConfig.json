@@ -42,14 +42,14 @@
 			"label": "Gotify Port"
 		},
 		"token": {
-			"type": "text",
+			"type": "password",
+			"visible": true,
 			"label": "Gotify Token",
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
 			"validator": "data.token",
 			"validatorNoSaveOnError": true,
-			"placeholder": "XXXxxXXXxxxXXXX",
 			"help": "Gotify Token"
 		},
 		"notificationSettings": {
