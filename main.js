@@ -21,6 +21,7 @@ class GotifyWs extends utils.Adapter {
 			name: adapterName,
 		});
 		this.on('ready', this.onReady.bind(this));
+		// @ts-ignore
 		this.on('message', this.onMessage.bind(this));
 		this.on('unload', this.onUnload.bind(this));
 	}
@@ -171,6 +172,7 @@ class GotifyWs extends utils.Adapter {
 
 			ws = new WebSocket(uri, {
 				headers: {
+					// @ts-ignore
 					'X-Gotify-Key': this.config.token,
 				},
 			});
@@ -218,7 +220,7 @@ class GotifyWs extends utils.Adapter {
 							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '<b>Gotifi WS Message</b>';
 
 						try {
-							this.sendTo(this.config.telegramInstance, 'send', {
+							await this.sendToAsync(this.config.telegramInstance, 'send', {
 								parse_mode: 'HTML',
 								text: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
 							});
@@ -236,7 +238,7 @@ class GotifyWs extends utils.Adapter {
 							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '<b>Gotifi WS Message</b>';
 
 						try {
-							this.sendTo(this.config.telegramInstance, 'send', {
+							await this.sendToAsync(this.config.telegramInstance, 'send', {
 								user: this.config.telegramUser,
 								parse_mode: 'HTML',
 								text: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
@@ -253,7 +255,7 @@ class GotifyWs extends utils.Adapter {
 						const title = line.title != '' ? line.title.replace(/[`]/g, '') : 'Gotifi WS Message';
 
 						try {
-							this.sendTo(this.config.emailInstance, 'send', {
+							await this.sendToAsync(this.config.emailInstance, 'send', {
 								text: formatMessage,
 								to: this.config.emailReceiver,
 								subject: title,
@@ -276,7 +278,7 @@ class GotifyWs extends utils.Adapter {
 							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '<b>Gotifi WS Message</b>';
 
 						try {
-							this.sendTo(this.config.pushoverInstance, 'send', {
+							await this.sendToAsync(this.config.pushoverInstance, 'send', {
 								message: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
 								sound: '',
 								priority: -1,
@@ -294,7 +296,7 @@ class GotifyWs extends utils.Adapter {
 							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '<b>Gotifi WS Message</b>';
 
 						try {
-							this.sendTo(this.config.pushoverInstance, 'send', {
+							await this.sendToAsync(this.config.pushoverInstance, 'send', {
 								message: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
 								sound: '',
 								title: title,
@@ -313,11 +315,27 @@ class GotifyWs extends utils.Adapter {
 						const title = line.title != '' ? `*${line.title.replace(/[`]/g, '')}*` : '*Gotifi WS Message*';
 
 						try {
-							this.sendTo(this.config.whatsappInstance, 'send', {
+							await this.sendToAsync(this.config.whatsappInstance, 'send', {
 								text: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
 							});
 						} catch (err) {
 							this.log.warn(`Error sending WhatsApp message: ${err}`);
+						}
+					}
+					break;
+				case 'notification-manager':
+					if (this.config.notificationManagerInstance) {
+						const message = line.message.replace(/[`]/g, '');
+						const formatMessage = message.replace(/[']/g, '"');
+						const title = line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '<b>Gotifi WS Message</b>';
+
+						try {
+							await this.sendToAsync(this.config.notificationManagerInstance, 'registerUserNotification', {
+								category: 'notify',
+								message: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
+							});
+						} catch (err) {
+							this.log.warn(`Error sending Notification-Manager message: ${err}`);
 						}
 					}
 					break;
@@ -328,7 +346,7 @@ class GotifyWs extends utils.Adapter {
 						const title = line.title != '' ? line.title.replace(/[`]/g, '') : 'Gotifi WS Message';
 
 						try {
-							this.sendTo(this.config.signalInstance, 'send', {
+							await this.sendToAsync(this.config.signalInstance, 'send', {
 								text: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
 							});
 						} catch (err) {
@@ -336,7 +354,7 @@ class GotifyWs extends utils.Adapter {
 						}
 					}
 					break;
-				case 'matrix':
+				case 'matrix-org':
 					if (this.config.matrixInstance) {
 						const message = line.message.replace(/[`]/g, '');
 						const formatMessage = message.replace(/[']/g, '"');
@@ -344,7 +362,7 @@ class GotifyWs extends utils.Adapter {
 							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '<b>Gotifi WS Message</b>';
 
 						try {
-							this.sendTo(this.config.matrixInstance, {
+							await this.sendToAsync(this.config.matrixInstance, {
 								html: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
 							});
 						} catch (err) {
@@ -362,7 +380,7 @@ class GotifyWs extends utils.Adapter {
 						if (this.config.discordTarget.match(/^\d+$/)) {
 							// send to a single user
 							try {
-								this.sendTo(this.config.discordInstance, 'sendMessage', {
+								await this.sendToAsync(this.config.discordInstance, 'sendMessage', {
 									userId: this.config.discordTarget,
 									content: `${title != '' ? `${title}\n` : ''}${formatMessage}`,
 								});
@@ -373,7 +391,7 @@ class GotifyWs extends utils.Adapter {
 							// send to a server channel
 							const [serverId, channelId] = this.config.discordTarget.split('/');
 							try {
-								this.sendTo(this.config.discordInstance, 'sendMessage', {
+								await this.sendToAsync(this.config.discordInstance, 'sendMessage', {
 									serverId,
 									channelId,
 									content: `${title != '' ? `${title}\n` : ''}${formatMessage}`,

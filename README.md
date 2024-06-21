@@ -41,6 +41,7 @@ Spotify-WS currently supports the following notification services
 
 * e-mail
 * Matrix
+* Notification-Manager
 * Pushover
 * Discord
 * Signal
@@ -66,6 +67,7 @@ You can then configure a notification service of your choice for forwarding.
 ## Changelog
 ### **WORK IN PROGRESS**
 * (simatec) Fix io-package
+* (simatec) Notification-Manager added
 
 ### 0.1.1 (2024-06-19)
 * (simatec) Fix Branch

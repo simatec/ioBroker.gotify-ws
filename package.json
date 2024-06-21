@@ -10,12 +10,14 @@
   "license": "MIT",
   "keywords": [
     "Gotify",
-    "Websocket",
-    "Telegram",
-    "Whatsapp",
-    "Discord",
-    "Mail",
-    "Pushover"
+      "Websocket",
+      "Telegram",
+      "Whatsapp",
+      "Discord",
+      "Mail",
+      "Pushover",
+      "Notification-Manager",
+      "Signal"
   ],
   "repository": {
     "type": "git",

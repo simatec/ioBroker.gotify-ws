@@ -75,6 +75,10 @@
 					"value": "matrix-org"
 				},
 				{
+					"label": "Notification-Manager",
+					"value": "notification-manager"
+				},
+				{
 					"label": "Pushover",
 					"value": "pushover"
 				},
@@ -136,13 +140,24 @@
 		"matrixInstance": {
 			"type": "selectSendTo",
 			"command": "sendToInstance",
-			"jsonData": "{ \"type\": \"matrix\" }",
-			"hidden": "data.notificationType !== 'matrix'",
+			"jsonData": "{ \"type\": \"matrix-org\" }",
+			"hidden": "data.notificationType !== 'matrix-org'",
 			"label": "Matrix Instance",
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
 			"help": "Matrix Instance"
+		},
+		"notificationManagerInstance": {
+			"type": "selectSendTo",
+			"command": "sendToInstance",
+			"jsonData": "{ \"type\": \"notification-manager\" }",
+			"hidden": "data.notificationType !== 'notification-manager'",
+			"label": "Notification-Manager Instance",
+			"sm": 12,
+			"md": 8,
+			"lg": 4,
+			"help": "Notification-Manager Instance"
 		},
 		"pushoverInstance": {
 			"type": "selectSendTo",
