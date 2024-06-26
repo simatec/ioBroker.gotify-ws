@@ -74,7 +74,9 @@
     "release-patch": "release-script patch --yes",
     "release-minor": "release-script minor --yes",
     "release-major": "release-script major --yes",
-    "translate": "translate-adapter"
+    "translate": "translate-adapter",
+    "dev-server-run": "dev-server run gotify-ws",
+    "dev-server-watch": "dev-server watch gotify-ws"
   },
   "bugs": {
     "url": "https://github.com/simatec/ioBroker.gotify-ws/issues"
