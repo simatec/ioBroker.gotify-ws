@@ -1,6 +1,6 @@
 {
   "name": "iobroker.gotify-ws",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Gotify web socket for connection to various notification systems",
   "author": {
     "name": "simatec",
@@ -10,14 +10,14 @@
   "license": "MIT",
   "keywords": [
     "Gotify",
-      "Websocket",
-      "Telegram",
-      "Whatsapp",
-      "Discord",
-      "Mail",
-      "Pushover",
-      "Notification-Manager",
-      "Signal"
+    "Websocket",
+    "Telegram",
+    "Whatsapp",
+    "Discord",
+    "Mail",
+    "Pushover",
+    "Notification-Manager",
+    "Signal"
   ],
   "repository": {
     "type": "git",
