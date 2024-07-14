@@ -33,22 +33,22 @@ class GotifyWs extends utils.Adapter {
 			systemLang = sysLang.common.language;
 		}
 
-		this.setState('info.connection', false, true);
+		await this.setStateAsync('info.connection', false, true);
 		this.connectWebSocket();
 	}
 
 	/**
 	 * @param {() => void} callback
 	 */
-	onUnload(callback) {
-		this.setState('info.connection', false, true);
+	async onUnload(callback) {
+		await this.setStateAsync('info.connection', false, true);
 
 		try {
 			if (ws) {
 				stop = true;
 				ws.close();
 				ws.terminate();
-				clearTimeout(timer);
+				this.clearTimeout(timer);
 				timer = null;
 			}
 			callback();
@@ -191,7 +191,7 @@ class GotifyWs extends utils.Adapter {
 				this.setState('info.connection', false, true);
 				this.log.info('WebSocket closed');
 				if (stop === false) {
-					timer = setTimeout(this.connectWebSocket, 5000);
+					timer = this.setTimeout(this.connectWebSocket, 5000);
 				}
 			});
 
