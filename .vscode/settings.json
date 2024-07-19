@@ -4,15 +4,24 @@
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"json.schemas": [
 		{
-			"fileMatch": ["io-package.json"],
+			"fileMatch": [
+				"io-package.json"
+			],
 			"url": "https://json.schemastore.org/io-package"
 		},
 		{
-			"fileMatch": ["admin/jsonConfig.json", "admin/jsonCustom.json", "admin/jsonTab.json"],
+			"fileMatch": [
+				"admin/jsonConfig.json",
+				"admin/jsonCustom.json",
+				"admin/jsonTab.json"
+			],
 			"url": "https://raw.githubusercontent.com/ioBroker/adapter-react-v5/main/schemas/jsonConfig.json"
 		}
 	],
 	"[jsonc]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"[json]": {
 		"editor.defaultFormatter": "vscode.json-language-features"
 	}
 }
