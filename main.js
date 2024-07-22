@@ -33,15 +33,15 @@ class GotifyWs extends utils.Adapter {
 			systemLang = sysLang.common.language;
 		}
 
-		await this.setStateAsync('info.connection', false, true);
+		this.setState('info.connection', false, true);
 		this.connectWebSocket();
 	}
 
 	/**
 	 * @param {() => void} callback
 	 */
-	async onUnload(callback) {
-		await this.setStateAsync('info.connection', false, true);
+	onUnload(callback) {
+		this.setState('info.connection', false, true);
 
 		try {
 			if (ws) {
