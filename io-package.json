@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "gotify-ws",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "news": {
+      "0.1.5": {
+        "en": "small fix",
+        "de": "kleine fix",
+        "ru": "небольшое исправление",
+        "pt": "pequena correção",
+        "nl": "kleine fix",
+        "fr": "petite fixation",
+        "it": "piccola correzione",
+        "es": "pequeño",
+        "pl": "mały fix",
+        "uk": "невелика фіксація",
+        "zh-cn": "小修补"
+      },
       "0.1.4": {
         "en": "Dependencies updated",
         "de": "Ausgaben aktualisiert",
