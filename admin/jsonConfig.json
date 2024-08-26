@@ -8,17 +8,22 @@
 			"newLine": true,
 			"style": {
 				"fontSize": 20
-			}
+			},
+			"xs": 10,
+			"sm": 10
 		},
 		"gotifySettings": {
 			"newLine": true,
 			"type": "header",
 			"text": "Gotify Settings",
-			"size": 2
+			"size": 2,
+			"xs": 12,
+			"sm": 12
 		},
 		"ip": {
 			"type": "text",
 			"label": "Gotify IP or Domain",
+			"xs": 12,
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
@@ -29,6 +34,7 @@
 			"newLine": true
 		},
 		"port": {
+			"xs": 12,
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
@@ -45,6 +51,7 @@
 			"type": "password",
 			"visible": true,
 			"label": "Gotify Token",
+			"xs": 12,
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
@@ -56,11 +63,14 @@
 			"newLine": true,
 			"type": "header",
 			"text": "Notification Settings",
-			"size": 2
+			"size": 2,
+			"xs": 12,
+			"sm": 12
 		},
 		"notificationType": {
 			"type": "select",
 			"label": "Notification type",
+			"xs": 12,
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
@@ -107,6 +117,7 @@
 			"jsonData": "{ \"type\": \"email\" }",
 			"hidden": "data.notificationType !== 'email'",
 			"label": "E-Mail Instance",
+			"xs": 12,
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
@@ -116,6 +127,7 @@
 			"type": "text",
 			"hidden": "data.notificationType !== 'email'",
 			"label": "E-Mail Receiver",
+			"xs": 12,
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
@@ -129,6 +141,7 @@
 			"type": "text",
 			"hidden": "data.notificationType !== 'email'",
 			"label": "E-Mail Sender",
+			"xs": 12,
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
@@ -143,6 +156,7 @@
 			"jsonData": "{ \"type\": \"matrix-org\" }",
 			"hidden": "data.notificationType !== 'matrix-org'",
 			"label": "Matrix Instance",
+			"xs": 12,
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
@@ -154,6 +168,7 @@
 			"jsonData": "{ \"type\": \"notification-manager\" }",
 			"hidden": "data.notificationType !== 'notification-manager'",
 			"label": "Notification-Manager Instance",
+			"xs": 12,
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
@@ -165,6 +180,7 @@
 			"jsonData": "{ \"type\": \"pushover\" }",
 			"hidden": "data.notificationType !== 'pushover'",
 			"label": "Pushover Instance",
+			"xs": 12,
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
@@ -174,6 +190,7 @@
 			"type": "text",
 			"hidden": "data.notificationType !== 'pushover'",
 			"label": "Device ID",
+			"xs": 12,
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
@@ -184,6 +201,7 @@
 			"type": "checkbox",
 			"hidden": "data.notificationType !== 'pushover'",
 			"label": "Silent Notice",
+			"xs": 12,
 			"sm": 12,
 			"md": 8,
 			"lg": 4
@@ -194,6 +212,7 @@
 			"jsonData": "{ \"type\": \"discord\" }",
 			"hidden": "data.notificationType !== 'discord'",
 			"label": "Discord Instance",
+			"xs": 12,
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
@@ -205,6 +224,7 @@
 			"jsonData": "{ \"instance\": \"${data.discordInstance}\" }",
 			"hidden": "data.notificationType !== 'discord'",
 			"label": "Discord Target",
+			"xs": 12,
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
@@ -217,6 +237,7 @@
 			"jsonData": "{ \"type\": \"signal-cmb\" }",
 			"hidden": "data.notificationType !== 'signal-cmb'",
 			"label": "Signal Instance",
+			"xs": 12,
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
@@ -228,6 +249,7 @@
 			"jsonData": "{ \"type\": \"telegram\" }",
 			"hidden": "data.notificationType !== 'telegram'",
 			"label": "Telegram Instance",
+			"xs": 12,
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
@@ -240,6 +262,7 @@
 			"hidden": "data.notificationType !== 'telegram'",
 			"label": "Telegram User",
 			"noTranslation": false,
+			"xs": 12,
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
@@ -251,6 +274,7 @@
 			"jsonData": "{ \"type\": \"whatsapp-cmb\" }",
 			"hidden": "data.notificationType !== 'whatsapp-cmb'",
 			"label": "Whatsapp Instance",
+			"xs": 12,
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
@@ -259,12 +283,16 @@
 		"_helpLine2": {
 			"newLine": true,
 			"type": "divider",
-			"color": "secondary"
+			"color": "secondary",
+			"xs": 12,
+			"sm": 12
 		},
 		"_donateTxt": {
 			"type": "staticText",
 			"text": "If you like this project and would like to support its development, you are welcome to leave a donation.",
-			"newLine": true
+			"newLine": true,
+			"xs": 12,
+			"sm": 12
 		},
 		"_donate": {
 			"type": "staticImage",
@@ -272,14 +300,18 @@
 			"noTranslation": true,
 			"href": "https://paypal.me/mk1676",
 			"src": "https://camo.githubusercontent.com/bf0ea06ef4d9aa4dcb2f2990d99371e7a68e543ec49b788e481568a88c745502/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f70617970616c2d646f6e6174652532302537432532307370656e64656e2d626c75652e737667",
-			"newLine": true
+			"newLine": true,
+			"xs": 6,
+			"sm": 6
 		},
 		"_githubSponsor": {
 			"type": "staticImage",
 			"tooltip": "GitHub Sponsors",
 			"noTranslation": true,
 			"href": "https://github.com/sponsors/simatec",
-			"src": "https://camo.githubusercontent.com/365a269ff418d24bdf194ab15958a7545e2d9cc794be9e42933e57519e315b51/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f6c6162656c3d53706f6e736f72266d6573736167653d254532253944254134266c6f676f3d47697448756226636f6c6f723d253233666538653836"
+			"src": "https://camo.githubusercontent.com/365a269ff418d24bdf194ab15958a7545e2d9cc794be9e42933e57519e315b51/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f6c6162656c3d53706f6e736f72266d6573736167653d254532253944254134266c6f676f3d47697448756226636f6c6f723d253233666538653836",
+			"xs": 6,
+			"sm": 6
 		}
 	}
 }
