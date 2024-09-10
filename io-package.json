@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "gotify-ws",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "news": {
+      "0.1.6": {
+        "en": "Fix Adapter Check\nDependencies updated\nResponsive Design added",
+        "de": "Fix Adapter Überprüfung\nAusgaben aktualisiert\nResponsive Design hinzugefügt",
+        "ru": "Fix Adapter Проверка\nОбновленные данные о зависимостях\nResponsive Design",
+        "pt": "Adaptador de fixação Verificação\nDependências atualizadas\nDesign responsivo adicionado",
+        "nl": "Repareren Adapter Controleren\nAfhankelijkheden bijgewerkt\nResponsive Design toegevoegd",
+        "fr": "Correction de l'adaptateur Vérifier\nDépendances actualisées\nDesign sensible ajouté",
+        "it": "Adattatore di fissaggio Check\nDipendenze aggiornate\nResponsive Design aggiunto",
+        "es": "Adaptador de fijación Check\nActualización de las dependencias\nDiseño responsable añadido",
+        "pl": "Napraw adapter Sprawdź\nAktualizacja zależności\nDodano projekt odpowiedzialny",
+        "uk": "Фіксований адаптер Зареєструватися\nЗалежність оновлено\nДодано адаптивний дизайн",
+        "zh-cn": "修复适配器 检查\n更新的依赖关系\n添加响应设计"
+      },
       "0.1.5": {
         "en": "small fix",
         "de": "kleine fix",
