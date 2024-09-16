@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "gotify-ws",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "news": {
+      "0.1.7": {
+        "en": "Dependencies updated\nResponsive Design fix",
+        "de": "Ausgaben aktualisiert\nResponsive Design fix",
+        "ru": "Обновленные данные о зависимостях\nРеакция Responsive Design",
+        "pt": "Dependências atualizadas\nCorreção de design responsivo",
+        "nl": "Afhankelijkheden bijgewerkt\nResponsive Design fix",
+        "fr": "Dépendances actualisées\nCorrection de conception sensible",
+        "it": "Dipendenze aggiornate\nResponsive Design fix",
+        "es": "Actualización de las dependencias\nResponsive Design fix",
+        "pl": "Aktualizacja zależności\nResponsive Design fix",
+        "uk": "Залежність оновлено\nКріплення адаптивного дизайну",
+        "zh-cn": "更新的依赖关系\n反应设计修正"
+      },
       "0.1.6": {
         "en": "Fix Adapter Check\nDependencies updated\nResponsive Design added",
         "de": "Fix Adapter Überprüfung\nAusgaben aktualisiert\nResponsive Design hinzugefügt",
@@ -80,19 +93,6 @@
         "pl": "Fix Branch",
         "uk": "(simatec) Фіксація відділення",
         "zh-cn": "(同声)"
-      },
-      "0.1.0": {
-        "en": "(simatec) First Release",
-        "de": "(simatec) Erste Veröffentlichung",
-        "ru": "Первый выпуск",
-        "pt": "(simatec) Primeira versão",
-        "nl": "Eerste uitgave",
-        "fr": "Première sortie",
-        "it": "(simatec) Primo rilascio",
-        "es": "Primer lanzamiento",
-        "pl": "Pierwsze wydanie",
-        "uk": "(simatec) Перший реліз",
-        "zh-cn": "第一次发布"
       }
     },
     "titleLang": {
