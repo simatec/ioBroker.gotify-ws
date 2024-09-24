@@ -214,10 +214,11 @@ class GotifyWs extends utils.Adapter {
 						this.config.telegramUser === 'allTelegramUsers' &&
 						this.config.telegramInstance
 					) {
-						const message = line.message.replace(/[`]/g, '');
-						const formatMessage = message.replace(/[']/g, '"');
-						const title =
-							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '<b>Gotifi WS Message</b>';
+						const formatMessage = line.message
+							.replace(/[`]/g, '')
+							.replace(/[']/g, '"');
+
+						const title = line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '<b>Gotifi WS Message</b>';
 
 						try {
 							await this.sendToAsync(this.config.telegramInstance, 'send', {
@@ -232,10 +233,11 @@ class GotifyWs extends utils.Adapter {
 						this.config.telegramUser != 'allTelegramUsers' &&
 						this.config.telegramInstance
 					) {
-						const message = line.message.replace(/[`]/g, '');
-						const formatMessage = message.replace(/[']/g, '"');
-						const title =
-							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '<b>Gotifi WS Message</b>';
+						const formatMessage = line.message
+							.replace(/[`]/g, '')
+							.replace(/[']/g, '"');
+
+						const title = line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '<b>Gotifi WS Message</b>';
 
 						try {
 							await this.sendToAsync(this.config.telegramInstance, 'send', {
@@ -250,8 +252,10 @@ class GotifyWs extends utils.Adapter {
 					break;
 				case 'email':
 					if (this.config.emailInstance && this.config.emailReceiver && this.config.emailSender) {
-						const message = line.message.replace(/[`]/g, '');
-						const formatMessage = message.replace(/[']/g, '"');
+						const formatMessage = line.message
+							.replace(/[`]/g, '')
+							.replace(/[']/g, '"');
+
 						const title = line.title != '' ? line.title.replace(/[`]/g, '') : 'Gotifi WS Message';
 
 						try {
@@ -272,10 +276,11 @@ class GotifyWs extends utils.Adapter {
 						this.config.pushoverInstance &&
 						this.config.pushoverDeviceID
 					) {
-						const message = line.message.replace(/[`]/g, '');
-						const formatMessage = message.replace(/[']/g, '"');
-						const title =
-							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '<b>Gotifi WS Message</b>';
+						const formatMessage = line.message
+							.replace(/[`]/g, '')
+							.replace(/[']/g, '"');
+
+						const title = line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '<b>Gotifi WS Message</b>';
 
 						try {
 							await this.sendToAsync(this.config.pushoverInstance, 'send', {
@@ -290,10 +295,11 @@ class GotifyWs extends utils.Adapter {
 							this.log.warn(`Error sending Pushover message: ${err}`);
 						}
 					} else if (this.config.pushoverInstance && this.config.pushoverDeviceID) {
-						const message = line.message.replace(/[`]/g, '');
-						const formatMessage = message.replace(/[']/g, '"');
-						const title =
-							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '<b>Gotifi WS Message</b>';
+						const formatMessage = line.message
+							.replace(/[`]/g, '')
+							.replace(/[']/g, '"');
+
+						const title = line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '<b>Gotifi WS Message</b>';
 
 						try {
 							await this.sendToAsync(this.config.pushoverInstance, 'send', {
@@ -310,8 +316,10 @@ class GotifyWs extends utils.Adapter {
 					break;
 				case 'whatsapp-cmb':
 					if (this.config.whatsappInstance) {
-						const message = line.message.replace(/[`]/g, '');
-						const formatMessage = message.replace(/[']/g, '"');
+						const formatMessage = line.message
+							.replace(/[`]/g, '')
+							.replace(/[']/g, '"');
+
 						const title = line.title != '' ? `*${line.title.replace(/[`]/g, '')}*` : '*Gotifi WS Message*';
 
 						try {
@@ -325,8 +333,10 @@ class GotifyWs extends utils.Adapter {
 					break;
 				case 'notification-manager':
 					if (this.config.notificationManagerInstance) {
-						const message = line.message.replace(/[`]/g, '');
-						const formatMessage = message.replace(/[']/g, '"');
+						const formatMessage = line.message
+							.replace(/[`]/g, '')
+							.replace(/[']/g, '"');
+
 						const title = line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '<b>Gotifi WS Message</b>';
 
 						try {
@@ -341,8 +351,10 @@ class GotifyWs extends utils.Adapter {
 					break;
 				case 'signal-cmb':
 					if (this.config.signalInstance) {
-						const message = line.message.replace(/[`]/g, '');
-						const formatMessage = message.replace(/[']/g, '"');
+						const formatMessage = line.message
+							.replace(/[`]/g, '')
+							.replace(/[']/g, '"');
+
 						const title = line.title != '' ? line.title.replace(/[`]/g, '') : 'Gotifi WS Message';
 
 						try {
@@ -356,10 +368,11 @@ class GotifyWs extends utils.Adapter {
 					break;
 				case 'matrix-org':
 					if (this.config.matrixInstance) {
-						const message = line.message.replace(/[`]/g, '');
-						const formatMessage = message.replace(/[']/g, '"');
-						const title =
-							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '<b>Gotifi WS Message</b>';
+						const formatMessage = line.message
+							.replace(/[`]/g, '')
+							.replace(/[']/g, '"');
+
+						const title = line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : '<b>Gotifi WS Message</b>';
 
 						try {
 							await this.sendToAsync(this.config.matrixInstance, {
@@ -372,10 +385,11 @@ class GotifyWs extends utils.Adapter {
 					break;
 				case 'discord':
 					if (this.config.discordInstance && this.config.discordTarget) {
-						const message = line.message.replace(/[`]/g, '');
-						const formatMessage = message.replace(/[']/g, '"');
-						const title =
-							line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : 'Gotifi WS Message';
+						const formatMessage = line.message
+							.replace(/[`]/g, '')
+							.replace(/[']/g, '"');
+
+						const title = line.title != '' ? `<b>${line.title.replace(/[`]/g, '')}</b>` : 'Gotifi WS Message';
 
 						if (this.config.discordTarget.match(/^\d+$/)) {
 							// send to a single user
