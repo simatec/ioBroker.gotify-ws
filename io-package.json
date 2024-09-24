@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "gotify-ws",
-    "version": "0.1.7",
+    "version": "0.1.8",
     "news": {
+      "0.1.8": {
+        "en": "Responsive Design fix\nCleaned code",
+        "de": "Responsive Design fix\nGesäuberter Code",
+        "ru": "Реакция Responsive Design\nЧистый код",
+        "pt": "Correção de design responsivo\nCódigo limpo",
+        "nl": "Responsive Design fix\nGeschoonde code",
+        "fr": "Correction de conception sensible\nCode nettoyé",
+        "it": "Responsive Design fix\nCodice pulito",
+        "es": "Responsive Design fix\nCódigo limpio",
+        "pl": "Responsive Design fix\nKod oczyszczony",
+        "uk": "Кріплення адаптивного дизайну\nЧистий код",
+        "zh-cn": "反应设计修正\n已清理代码"
+      },
       "0.1.7": {
         "en": "Dependencies updated\nResponsive Design fix",
         "de": "Ausgaben aktualisiert\nResponsive Design fix",
@@ -80,19 +93,6 @@
         "pl": "(simatec) Napraw pakiet jo-\n(simatec) Notification-Manager dodany",
         "uk": "(simatec) Фіксація io-package\n(simatec) Notification-Manager додано",
         "zh-cn": "(静电)\n(simatec) 通知管理器添加"
-      },
-      "0.1.1": {
-        "en": "(simatec) Fix Branch",
-        "de": "(simatec)",
-        "ru": "(simatec) Fix Branch",
-        "pt": "(simatec) Fix Branch",
-        "nl": "Fix Branch",
-        "fr": "Branche de réparation",
-        "it": "(simatec) Fix Branch",
-        "es": "(simatec) Fix Branch",
-        "pl": "Fix Branch",
-        "uk": "(simatec) Фіксація відділення",
-        "zh-cn": "(同声)"
       }
     },
     "titleLang": {
