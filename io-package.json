@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "gotify-ws",
-    "version": "0.1.8",
+    "version": "0.1.9",
     "news": {
+      "0.1.9": {
+        "en": "Fix for admin 7.1.5",
+        "de": "Fix für admin 7.1.5",
+        "ru": "Admin 7.1.5",
+        "pt": "Fix para admin 7.1.5",
+        "nl": "Fix voor admin 7.1.5",
+        "fr": "Correction pour admin 7.1.5",
+        "it": "Fissare per admin 7.1.5",
+        "es": "Corrección para administración 7.1.5",
+        "pl": "Popraw dla admin 7.1.5",
+        "uk": "Виправлення для адміністратора 7.1.5",
+        "zh-cn": "7.1.5 管理员的固定"
+      },
       "0.1.8": {
         "en": "Responsive Design fix\nCleaned code",
         "de": "Responsive Design fix\nGesäuberter Code",
@@ -80,19 +93,6 @@
         "pl": "Napraw test i wydaj\nPopraw czas",
         "uk": "Тестування та реліз\nВиправлення часу",
         "zh-cn": "修复测试和释放\n修正超时"
-      },
-      "0.1.2": {
-        "en": "(simatec) Fix io-package\n(simatec) Notification-Manager added",
-        "de": "(simatec)\n(simatec) Notification-Manager hinzugefügt",
-        "ru": "Fix io-package\n(simatec)",
-        "pt": "(simatec) Fix io-package\n(simatec) Notificação-Manager adicionado",
-        "nl": "Fix io-package\n(simatec) Notification-Manager toegevoegd",
-        "fr": "(simatec) Correction de l'emballage\n(simatec) Avis-Gestionnaire ajouté",
-        "it": "(simatec) Fissare io-package\n(simatec) Notificazione-Manager aggiunto",
-        "es": "(simatec) Fija io-paquete\n(simatec) Notification-Manager añadido",
-        "pl": "(simatec) Napraw pakiet jo-\n(simatec) Notification-Manager dodany",
-        "uk": "(simatec) Фіксація io-package\n(simatec) Notification-Manager додано",
-        "zh-cn": "(静电)\n(simatec) 通知管理器添加"
       }
     },
     "titleLang": {
