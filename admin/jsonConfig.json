@@ -10,7 +10,10 @@
 				"fontSize": 20
 			},
 			"xs": 10,
-			"sm": 10
+			"sm": 10,
+			"md": 10,
+			"lg": 10,
+			"xl": 10
 		},
 		"gotifySettings": {
 			"newLine": true,
@@ -18,7 +21,10 @@
 			"text": "Gotify Settings",
 			"size": 2,
 			"xs": 12,
-			"sm": 12
+			"sm": 12,
+			"md": 12,
+			"lg": 12,
+			"xl": 12
 		},
 		"ip": {
 			"type": "text",
@@ -27,6 +33,7 @@
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
+			"xl": 4,
 			"help": "Gotify IP or Domain",
 			"validator": "data.ip",
 			"validatorNoSaveOnError": true,
@@ -38,6 +45,7 @@
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
+			"xl": 4,
 			"min": 1,
 			"max": 65535,
 			"help": "Gotify Port",
@@ -55,6 +63,7 @@
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
+			"xl": 4,
 			"validator": "data.token",
 			"validatorNoSaveOnError": true,
 			"help": "Gotify Token"
@@ -65,7 +74,10 @@
 			"text": "Notification Settings",
 			"size": 2,
 			"xs": 12,
-			"sm": 12
+			"sm": 12,
+			"md": 12,
+			"lg": 12,
+			"xl": 12
 		},
 		"notificationType": {
 			"type": "select",
@@ -74,6 +86,7 @@
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
+			"xl": 4,
 			"help": "Notification type",
 			"options": [
 				{
@@ -121,6 +134,7 @@
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
+			"xl": 4,
 			"help": "E-Mail Instance"
 		},
 		"emailReceiver": {
@@ -131,6 +145,7 @@
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
+			"xl": 4,
 			"help": "E-Mail Receiver",
 			"validator": "data.emailReceiver",
 			"validatorNoSaveOnError": true,
@@ -145,6 +160,7 @@
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
+			"xl": 4,
 			"validator": "data.emailSender",
 			"validatorNoSaveOnError": true,
 			"placeholder": "xxxx@xxxx.com",
@@ -160,6 +176,7 @@
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
+			"xl": 4,
 			"help": "Matrix Instance"
 		},
 		"notificationManagerInstance": {
@@ -172,6 +189,7 @@
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
+			"xl": 4,
 			"help": "Notification-Manager Instance"
 		},
 		"pushoverInstance": {
@@ -184,6 +202,7 @@
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
+			"xl": 4,
 			"help": "Pushover Instance"
 		},
 		"pushoverDeviceID": {
@@ -194,6 +213,7 @@
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
+			"xl": 4,
 			"help": "Device ID"
 		},
 		"pushoverSilentNotice": {
@@ -204,7 +224,8 @@
 			"xs": 12,
 			"sm": 12,
 			"md": 8,
-			"lg": 4
+			"lg": 4,
+			"xl": 4
 		},
 		"discordInstance": {
 			"type": "selectSendTo",
@@ -216,6 +237,7 @@
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
+			"xl": 4,
 			"help": "Discord Instance"
 		},
 		"discordTarget": {
@@ -228,6 +250,7 @@
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
+			"xl": 4,
 			"default": "none",
 			"help": "Discord Target"
 		},
@@ -241,6 +264,7 @@
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
+			"xl": 4,
 			"help": "Signal Instance"
 		},
 		"telegramInstance": {
@@ -253,6 +277,7 @@
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
+			"xl": 4,
 			"help": "Telegram Instance"
 		},
 		"telegramUser": {
@@ -266,6 +291,7 @@
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
+			"xl": 4,
 			"help": "Telegram User"
 		},
 		"whatsappInstance": {
@@ -278,6 +304,7 @@
 			"sm": 12,
 			"md": 8,
 			"lg": 4,
+			"xl": 4,
 			"help": "Whatsapp Instance"
 		},
 		"_helpLine2": {
@@ -285,14 +312,20 @@
 			"type": "divider",
 			"color": "secondary",
 			"xs": 12,
-			"sm": 12
+			"sm": 12,
+			"md": 12,
+			"lg": 12,
+			"xl": 12
 		},
 		"_donateTxt": {
 			"type": "staticText",
 			"text": "If you like this project and would like to support its development, you are welcome to leave a donation.",
 			"newLine": true,
 			"xs": 12,
-			"sm": 12
+			"sm": 12,
+			"md": 12,
+			"lg": 12,
+			"xl": 12
 		},
 		"_donate": {
 			"type": "staticImage",
@@ -304,7 +337,8 @@
 			"xs": 7,
 			"sm": 3,
 			"md": 3,
-			"lg": 1.2
+			"lg": 1.2,
+			"xl": 1.2
 		},
 		"_githubSponsor": {
 			"type": "staticImage",
@@ -315,7 +349,8 @@
 			"xs": 5,
 			"sm": 2,
 			"md": 2,
-			"lg": 0.8
+			"lg": 0.8,
+			"xl": 0.8
 		}
 	}
 }
