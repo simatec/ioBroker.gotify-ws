@@ -81,7 +81,8 @@
     "translate": "translate-adapter",
     "dev-server-run": "dev-server run gotify-ws",
     "dev-server-watch": "dev-server watch gotify-ws",
-    "npm": "npm install"
+    "npm": "npm install",
+    "lint": "eslint -c eslint.config.mjs ."
   },
   "bugs": {
     "url": "https://github.com/simatec/ioBroker.gotify-ws/issues"
