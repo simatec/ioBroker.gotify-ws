@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "gotify-ws",
-    "version": "0.1.9",
+    "version": "0.1.10",
     "news": {
+      "0.1.10": {
+        "en": "Dependencies updated\nResponsive Design fix\nIssue Action added\neslint-config added",
+        "de": "Ausgaben aktualisiert\nResponsive Design fix\nAusgabe Aktion hinzugefügt\neslint-config hinzugefügt",
+        "ru": "Обновленные данные о зависимостях\nРеакция Responsive Design\nДополнительные меры\nдобавлена eslint-config",
+        "pt": "Dependências atualizadas\nCorreção de design responsivo\nAção de problemas adicionada\neslint-config adicionado",
+        "nl": "Afhankelijkheden bijgewerkt\nResponsive Design fix\nOnderwerpactie toegevoegd\neslint-config toegevoegd",
+        "fr": "Dépendances actualisées\nCorrection de conception sensible\nMesure à prendre\neslint-config ajouté",
+        "it": "Dipendenze aggiornate\nResponsive Design fix\nAzione di problema aggiunto\neslint-config aggiunto",
+        "es": "Actualización de las dependencias\nResponsive Design fix\nTema Acción añadido\neslint-config añadido",
+        "pl": "Aktualizacja zależności\nResponsive Design fix\nDodano działanie\neslint- config dodany",
+        "uk": "Залежність оновлено\nКріплення адаптивного дизайну\nДодана емісія\neslint-config додано",
+        "zh-cn": "更新的依赖关系\n反应设计修正\n添加的问题行动\n添加埃斯林特配置"
+      },
       "0.1.9": {
         "en": "Fix for admin 7.1.5",
         "de": "Fix für admin 7.1.5",
@@ -80,19 +93,6 @@
         "pl": "Aktualizacja zależności",
         "uk": "Залежність оновлено",
         "zh-cn": "更新的依赖关系"
-      },
-      "0.1.3": {
-        "en": "Fix Test & Release\nFix Timeout",
-        "de": "Test und Release\nTimeout reparieren",
-        "ru": "Fix Test & Release\nВремя ожидания",
-        "pt": "Teste de Fix & Release\nFix Timeout",
-        "nl": "Repareren Test & Release\nTijdslimiet herstellen",
-        "fr": "Correction du test et de la libération\nCorrection du délai",
-        "it": "Prova di correzione e rilascio\nRisolto il timeout",
-        "es": "Reparación de prueba\nCorrección de tiempo",
-        "pl": "Napraw test i wydaj\nPopraw czas",
-        "uk": "Тестування та реліз\nВиправлення часу",
-        "zh-cn": "修复测试和释放\n修正超时"
       }
     },
     "titleLang": {
