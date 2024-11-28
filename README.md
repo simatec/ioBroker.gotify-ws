@@ -63,7 +63,13 @@ This establishes a connection and the adapter can receive all incoming messages 
 You can then configure a notification service of your choice for forwarding.
 
 ---
+
+## Changelog
 <!-- ### **WORK IN PROGRESS** -->
+
+### **WORK IN PROGRESS**
+* (simatec) eslint-config fix
+
 ### 0.1.10 (2024-11-24)
 * (simatec) Dependencies updated
 * (simatec) Responsive Design fix
