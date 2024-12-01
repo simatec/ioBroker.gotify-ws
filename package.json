@@ -41,7 +41,7 @@
     "@iobroker/eslint-config": "^1.0.0",
     "@iobroker/testing": "^5.0.0",
     "chai": "^5.1.2",
-    "chai-as-promised": "^8.0.0",
+    "chai-as-promised": "^8.0.1",
     "mocha": "^10.8.2",
     "sinon": "^19.0.2",
     "sinon-chai": "^4.0.0"
