@@ -1,4 +1,3 @@
-/* eslint-disable prefer-const */
 'use strict';
 
 const WebSocket = require('ws');
@@ -65,7 +64,6 @@ class GotifyWs extends utils.Adapter {
 			case 'sendToInstance':
 				// @ts-ignore
 				if (obj && obj.command === 'sendToInstance' && obj.message && obj.message.type) {
-					// eslint-disable-next-line prefer-const
 					let resultInstances = [];
 
 					// @ts-ignore
@@ -110,7 +108,6 @@ class GotifyWs extends utils.Adapter {
 						useUsername = native.useUsername;
 					}
 
-					// eslint-disable-next-line prefer-const
 					let resultUser = [{ label: this._('All Receiver', systemLang), value: 'allTelegramUsers' }];
 
 					if (userList && userList.val) {
@@ -427,7 +424,7 @@ class GotifyWs extends utils.Adapter {
 		if (translations[word]) {
 			return translations[word];
 		} else {
-			this.log.debug('Please translate in translations.json: ' + word);
+			this.log.debug(`Please translate in translations.json: ${word}`);
 			return word;
 		}
 	}
