@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "gotify-ws",
-    "version": "0.1.10",
+    "version": "0.1.11",
     "news": {
+      "0.1.11": {
+        "en": "eslint-config fix\nCode fix\nDependencies updated\nUpdate License",
+        "de": "eslint-config fix\nCode fix\nAusgaben aktualisiert\nLizenz aktualisieren",
+        "ru": "eslint-конфигурация\nКод\nОбновленные данные о зависимостях\nЛицензия обновления",
+        "pt": "eslint-config fix\nCorreção de código\nDependências atualizadas\nLicença de atualização",
+        "nl": "eslint-config fix\nCodefix\nAfhankelijkheden bijgewerkt\nLicentie bijwerken",
+        "fr": "fixateur eslint-config\nFixation du code\nDépendances actualisées\nMettre à jour la licence",
+        "it": "eslint-config fix\nCodice di correzione\nDipendenze aggiornate\nLicenza di aggiornamento",
+        "es": "eslint-config fix\nCódigo\nActualización de las dependencias\nActualizar Licencia",
+        "pl": "fix eslint- config\nUstawienie kodu\nAktualizacja zależności\nUaktualnij licencję",
+        "uk": "eslint-config виправити\nВиправлення коду\nЗалежність оновлено\nОновлення ліцензії",
+        "zh-cn": "埃斯林特配置修复\n代码修正\n更新的依赖关系\n更新许可证"
+      },
       "0.1.10": {
         "en": "Dependencies updated\nResponsive Design fix\nIssue Action added\neslint-config added",
         "de": "Ausgaben aktualisiert\nResponsive Design fix\nAusgabe Aktion hinzugefügt\neslint-config hinzugefügt",
@@ -80,19 +93,6 @@
         "pl": "mały fix",
         "uk": "невелика фіксація",
         "zh-cn": "小修补"
-      },
-      "0.1.4": {
-        "en": "Dependencies updated",
-        "de": "Ausgaben aktualisiert",
-        "ru": "Обновленные данные о зависимостях",
-        "pt": "Dependências atualizadas",
-        "nl": "Afhankelijkheden bijgewerkt",
-        "fr": "Dépendances actualisées",
-        "it": "Dipendenze aggiornate",
-        "es": "Actualización de las dependencias",
-        "pl": "Aktualizacja zależności",
-        "uk": "Залежність оновлено",
-        "zh-cn": "更新的依赖关系"
       }
     },
     "titleLang": {

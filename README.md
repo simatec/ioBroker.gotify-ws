@@ -66,8 +66,7 @@ You can then configure a notification service of your choice for forwarding.
 
 ## Changelog
 <!-- ### **WORK IN PROGRESS** -->
-
-### **WORK IN PROGRESS**
+### 0.1.11 (2025-01-09)
 * (simatec) eslint-config fix
 * (simatec) Code fix
 * (simatec) Dependencies updated
