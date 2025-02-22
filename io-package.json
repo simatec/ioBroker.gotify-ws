@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "gotify-ws",
-    "version": "0.1.11",
+    "version": "0.1.12",
     "news": {
+      "0.1.12": {
+        "en": "Dependencies updated\nsmall fix",
+        "de": "Ausgaben aktualisiert\nkleine fix",
+        "ru": "Обновленные зависимости\nнебольшой ремонт",
+        "pt": "Dependências atualizadas\npequena correção",
+        "nl": "Afhankelijkheden bijgewerkt\nkleine fix",
+        "fr": "Dépendances actualisées\npetite fixation",
+        "it": "Dipendenze aggiornate\npiccola correzione",
+        "es": "Actualización de las dependencias\npequeño",
+        "pl": "Aktualizacja zależności\nmały fix",
+        "uk": "Залежність оновлено\nневелика фіксація",
+        "zh-cn": "更新的依赖关系\n小修补"
+      },
       "0.1.11": {
         "en": "eslint-config fix\nCode fix\nDependencies updated\nUpdate License",
         "de": "eslint-config fix\nCode fix\nAusgaben aktualisiert\nLizenz aktualisieren",
@@ -80,19 +93,6 @@
         "pl": "Napraw adapter Sprawdź\nAktualizacja zależności\nDodano projekt odpowiedzialny",
         "uk": "Фіксований адаптер Зареєструватися\nЗалежність оновлено\nДодано адаптивний дизайн",
         "zh-cn": "修复适配器 检查\n更新的依赖关系\n添加响应设计"
-      },
-      "0.1.5": {
-        "en": "small fix",
-        "de": "kleine fix",
-        "ru": "небольшое исправление",
-        "pt": "pequena correção",
-        "nl": "kleine fix",
-        "fr": "petite fixation",
-        "it": "piccola correzione",
-        "es": "pequeño",
-        "pl": "mały fix",
-        "uk": "невелика фіксація",
-        "zh-cn": "小修补"
       }
     },
     "titleLang": {
