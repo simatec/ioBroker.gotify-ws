@@ -183,7 +183,8 @@
     "emailSender": "xxx@xxx.com",
     "pushoverDeviceID": "",
     "pushoverSilentNotice": false,
-    "discordTarget": "none"
+    "discordTarget": "none",
+    "token": ""
   },
   "encryptedNative": [
     "token"
