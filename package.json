@@ -48,9 +48,9 @@
   },
   "main": "main.js",
   "files": [
-    "admin{,/!(src)/**}/!(tsconfig|tsconfig.*|.eslintrc).json",
-    "admin{,/!(src)/**}/*.{html,css,png,svg,jpg,js}",
-    "admin{,/!(i18n)/**}/flat.txt",
+    "admin/",
+    "!admin/**/*/flat.txt",
+    "!admin/**/tsconfig.json",
     "lib/",
     "!lib/**/*.{sh,bat,log}",
     "!.dev-server",

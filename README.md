@@ -67,6 +67,12 @@ You can then configure a notification service of your choice for forwarding.
 ## Changelog
 
 <!-- ### **WORK IN PROGRESS** -->
+
+### **WORK IN PROGRESS**
+
+-   (simatec) Dependencies updated
+-   (simatec) migrated to json5
+
 ### 0.1.12 (2025-02-22)
 
 -   (simatec) Dependencies updated
