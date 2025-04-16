@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "gotify-ws",
-    "version": "0.1.12",
+    "version": "0.1.13",
     "news": {
+      "0.1.13": {
+        "en": "Dependencies updated\nmigrated to json5",
+        "de": "Ausgaben aktualisiert\nzu json5 migriert",
+        "ru": "Обновленные зависимости\nиммиграция в json5",
+        "pt": "Dependências atualizadas\nmigrado para json5",
+        "nl": "Afhankelijkheden bijgewerkt\ngemigreerd naar json5",
+        "fr": "Dépendances actualisées\nmigré vers json5",
+        "it": "Dipendenze aggiornate\nmigrato a json5",
+        "es": "Actualización de las dependencias\nmigrated to json5",
+        "pl": "Aktualizacja zależności\nmigrant do json5",
+        "uk": "Залежність оновлено\nмігрований в json5",
+        "zh-cn": "更新的依赖关系\n迁移到json5"
+      },
       "0.1.12": {
         "en": "Dependencies updated\nsmall fix",
         "de": "Ausgaben aktualisiert\nkleine fix",
@@ -80,19 +93,6 @@
         "pl": "Aktualizacja zależności\nResponsive Design fix",
         "uk": "Залежність оновлено\nКріплення адаптивного дизайну",
         "zh-cn": "更新的依赖关系\n反应设计修正"
-      },
-      "0.1.6": {
-        "en": "Fix Adapter Check\nDependencies updated\nResponsive Design added",
-        "de": "Fix Adapter Überprüfung\nAusgaben aktualisiert\nResponsive Design hinzugefügt",
-        "ru": "Fix Adapter Проверка\nОбновленные данные о зависимостях\nResponsive Design",
-        "pt": "Adaptador de fixação Verificação\nDependências atualizadas\nDesign responsivo adicionado",
-        "nl": "Repareren Adapter Controleren\nAfhankelijkheden bijgewerkt\nResponsive Design toegevoegd",
-        "fr": "Correction de l'adaptateur Vérifier\nDépendances actualisées\nDesign sensible ajouté",
-        "it": "Adattatore di fissaggio Check\nDipendenze aggiornate\nResponsive Design aggiunto",
-        "es": "Adaptador de fijación Check\nActualización de las dependencias\nDiseño responsable añadido",
-        "pl": "Napraw adapter Sprawdź\nAktualizacja zależności\nDodano projekt odpowiedzialny",
-        "uk": "Фіксований адаптер Зареєструватися\nЗалежність оновлено\nДодано адаптивний дизайн",
-        "zh-cn": "修复适配器 检查\n更新的依赖关系\n添加响应设计"
       }
     },
     "titleLang": {
