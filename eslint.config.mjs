@@ -25,14 +25,15 @@ export default [
         // you may disable some 'jsdoc' warnings - but using jsdoc is highly recommended
         // as this improves maintainability. jsdoc warnings will not block buiuld process.
         rules: {
-            'jsdoc/require-jsdoc': 'off',
-            'jsdoc/no-types': 'off',
-            'jsdoc/no-defaults': 'off',
-            'jsdoc/require-param-description': 'off',
-            'prettier/prettier': 'off',
-            '@typescript-eslint/ban-ts-comment': 'off',
+            //'jsdoc/require-jsdoc': 'off',
+            //'jsdoc/no-types': 'off',
+            //'jsdoc/no-defaults': 'off',
+            //'jsdoc/require-param-description': 'off',
+            //'prettier/prettier': 'off',
+            //'@typescript-eslint/ban-ts-comment': 'off',
             '@typescript-eslint/no-unused-vars': 'off',
-            'no-else-return': 'off',
+            //'no-else-return': 'off',
+            '@typescript-eslint/no-for-in-array': 'off',
         },
     },
 
