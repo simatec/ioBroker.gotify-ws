@@ -67,6 +67,9 @@ You can then configure a notification service of your choice for forwarding.
 ## Changelog
 
 <!-- ### **WORK IN PROGRESS** -->
+### **WORK IN PROGRESS**
+* (simatec) Preparation for Typescript
+
 ### 0.1.13 (2025-04-16)
 
 -   (simatec) Dependencies updated
