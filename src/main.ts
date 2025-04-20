@@ -7,7 +7,7 @@ class GotifyWs extends utils.Adapter {
     private systemLang: string = 'de';
     private ws!: WebSocket;
     private timer: ioBroker.Timeout | undefined = undefined;
-    private stopNow: boolean | undefined = false;
+    private stopNow: boolean = false;
 
     public constructor(options: Partial<utils.AdapterOptions> = {}) {
         super({
