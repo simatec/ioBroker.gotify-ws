@@ -1,8 +1,8 @@
 'use strict';
 
-const WebSocket = require('ws');
-const utils = require('@iobroker/adapter-core');
-const adapterName = require('./package.json').name.split('.').pop();
+import WebSocket from 'ws';
+// import WebSocket, { WebSocketServer } from 'ws';
+import * as utils from '@iobroker/adapter-core';
 
 let systemLang = 'de'; // system language
 let ws = null;
@@ -16,8 +16,7 @@ class GotifyWs extends utils.Adapter {
 	constructor(options) {
 		super({
 			...options,
-			// @ts-ignore
-			name: adapterName,
+			name: 'gotify-ws',
 		});
 		this.on('ready', this.onReady.bind(this));
 		// @ts-ignore

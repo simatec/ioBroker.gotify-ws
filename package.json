@@ -40,19 +40,22 @@
     "@iobroker/adapter-dev": "^1.4.0",
     "@iobroker/eslint-config": "^2.0.1",
     "@iobroker/testing": "^5.0.4",
+    "@types/ws": "^8.18.1",
+    "@tsconfig/node20": "^20.1.5",
     "chai": "^5.2.0",
     "chai-as-promised": "^8.0.1",
     "mocha": "^11.1.0",
     "sinon": "^20.0.0",
-    "sinon-chai": "^4.0.0"
+    "sinon-chai": "^4.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   },
-  "main": "main.js",
+  "main": "build/main.js",
   "files": [
     "admin/",
     "!admin/**/*/flat.txt",
     "!admin/**/tsconfig.json",
-    "lib/",
-    "!lib/**/*.{sh,bat,log}",
+    "build/",
     "!.dev-server",
     "!.vscode",
     "!.github",
@@ -70,9 +73,17 @@
     "main.js"
   ],
   "scripts": {
-    "test": "npm run test:package && npm run test:unit",
+    "prebuild": "rimraf build",
+    "build": "build-adapter ts",
+    "watch": "build-adapter ts --watch",
+    "prebuild:ts": "rimraf build",
+    "build:ts": "build-adapter ts",
+    "watch:ts": "build-adapter ts --watch",
+    "test:ts": "mocha --config test/mocharc.custom.json src/**/*.test.ts",
+    "test": "npm run test:ts && npm run test:package",
+    "check": "tsc --noEmit",
+    "coverage": "nyc npm run test:ts",
     "test:package": "mocha test/package --exit",
-    "test:unit": "mocha test/unit --exit",
     "test:integration": "mocha test/integration --exit",
     "release": "release-script",
     "release-patch": "release-script patch --yes",
@@ -83,6 +94,26 @@
     "dev-server-watch": "dev-server watch gotify-ws",
     "npm": "npm install",
     "lint": "eslint -c eslint.config.mjs ."
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "src/**/*.test.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "text-summary",
+      "html"
+    ],
+    "sourceMap": true,
+    "instrument": true
   },
   "bugs": {
     "url": "https://github.com/simatec/ioBroker.gotify-ws/issues"
