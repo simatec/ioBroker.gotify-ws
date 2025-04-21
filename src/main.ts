@@ -159,7 +159,13 @@ class GotifyWs extends utils.Adapter {
             });
 
             this.ws.on('message', async data => {
-                const line = JSON.parse(data.toString('utf-8'));
+                if (typeof data !== 'string' && !Buffer.isBuffer(data)) {
+                    this.log.warn('Unexpected WebSocket message format');
+                    return;
+                }
+
+                const message = typeof data === 'string' ? data : data.toString('utf-8');
+                const line = JSON.parse(message);
                 await this.pushMessage(line);
             });
 
