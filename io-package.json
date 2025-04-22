@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "gotify-ws",
-    "version": "0.1.13",
+    "version": "0.2.0",
     "news": {
+      "0.2.0": {
+        "en": "Adapter rewritten in Typescript",
+        "de": "Adapter neu geschrieben in Typescript",
+        "ru": "Адаптер переписан в Typescript",
+        "pt": "Adaptador reescrito no Typescript",
+        "nl": "Adapter herschreven in Typescript",
+        "fr": "Adaptateur réécrit dans Typescript",
+        "it": "Adattatore riscritto in Typescript",
+        "es": "Adaptador reescrito en Tiposcript",
+        "pl": "Adapter przepisywany na maszynie",
+        "uk": "Переписка адаптера в Typescript",
+        "zh-cn": "用 Typescript 重写适配器"
+      },
       "0.1.13": {
         "en": "Dependencies updated\nmigrated to json5",
         "de": "Ausgaben aktualisiert\nzu json5 migriert",
@@ -80,19 +93,6 @@
         "pl": "Responsive Design fix\nKod oczyszczony",
         "uk": "Кріплення адаптивного дизайну\nЧистий код",
         "zh-cn": "反应设计修正\n已清理代码"
-      },
-      "0.1.7": {
-        "en": "Dependencies updated\nResponsive Design fix",
-        "de": "Ausgaben aktualisiert\nResponsive Design fix",
-        "ru": "Обновленные данные о зависимостях\nРеакция Responsive Design",
-        "pt": "Dependências atualizadas\nCorreção de design responsivo",
-        "nl": "Afhankelijkheden bijgewerkt\nResponsive Design fix",
-        "fr": "Dépendances actualisées\nCorrection de conception sensible",
-        "it": "Dipendenze aggiornate\nResponsive Design fix",
-        "es": "Actualización de las dependencias\nResponsive Design fix",
-        "pl": "Aktualizacja zależności\nResponsive Design fix",
-        "uk": "Залежність оновлено\nКріплення адаптивного дизайну",
-        "zh-cn": "更新的依赖关系\n反应设计修正"
       }
     },
     "titleLang": {
