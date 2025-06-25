@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@iobroker/adapter-core": "^3.2.3",
-    "axios": "^1.9.0",
+    "axios": "^1.10.0",
     "ws": "^8.18.2"
   },
   "devDependencies": {
@@ -40,13 +40,13 @@
     "@iobroker/adapter-dev": "^1.4.0",
     "@iobroker/eslint-config": "^2.0.2",
     "@iobroker/testing": "^5.0.4",
-    "@tsconfig/node20": "^20.1.5",
+    "@tsconfig/node20": "^20.1.6",
     "@types/ws": "^8.18.1",
     "chai": "^5.2.0",
     "chai-as-promised": "^8.0.1",
-    "mocha": "^11.5.0",
+    "mocha": "^11.7.1",
     "rimraf": "^6.0.1",
-    "sinon": "^20.0.0",
+    "sinon": "^21.0.0",
     "sinon-chai": "^4.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
