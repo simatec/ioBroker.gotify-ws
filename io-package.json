@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "gotify-ws",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "news": {
+      "0.2.1": {
+        "en": "dependencies updated\nReady for NodeJS 24.x",
+        "de": "aktualisierte abhängigkeiten\nBereit für NodeJS 24.x",
+        "ru": "обновленные зависимости\nГотовность к NodeJS 24.x",
+        "pt": "dependências atualizadas\nPronto para NodeJS 24.x",
+        "nl": "afhankelijkheden bijgewerkt\nKlaar voor NodeJS 24.x",
+        "fr": "dépendances mises à jour\nPrêt pour NodeJS 24.x",
+        "it": "dipendenze aggiornate\nPronti per NodeJS 24.x",
+        "es": "dependencias actualizadas\nListo para NodeJS 24.x",
+        "pl": "zaktualizowane zależności\nGotowy do NodeJS 24.x",
+        "uk": "оновлені залежності\nГотовий для NodeJS 24.x",
+        "zh-cn": "更新依赖关系\n准备进入节点JS 24.x"
+      },
       "0.2.0": {
         "en": "Adapter rewritten in Typescript",
         "de": "Adapter neu geschrieben in Typescript",
@@ -80,19 +93,6 @@
         "pl": "Popraw dla admin 7.1.5",
         "uk": "Виправлення для адміністратора 7.1.5",
         "zh-cn": "7.1.5 管理员的固定"
-      },
-      "0.1.8": {
-        "en": "Responsive Design fix\nCleaned code",
-        "de": "Responsive Design fix\nGesäuberter Code",
-        "ru": "Реакция Responsive Design\nЧистый код",
-        "pt": "Correção de design responsivo\nCódigo limpo",
-        "nl": "Responsive Design fix\nGeschoonde code",
-        "fr": "Correction de conception sensible\nCode nettoyé",
-        "it": "Responsive Design fix\nCodice pulito",
-        "es": "Responsive Design fix\nCódigo limpio",
-        "pl": "Responsive Design fix\nKod oczyszczony",
-        "uk": "Кріплення адаптивного дизайну\nЧистий код",
-        "zh-cn": "反应设计修正\n已清理代码"
       }
     },
     "titleLang": {
