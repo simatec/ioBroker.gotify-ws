@@ -67,6 +67,9 @@ You can then configure a notification service of your choice for forwarding.
 ## Changelog
 
 <!-- ### **WORK IN PROGRESS** -->
+### **WORK IN PROGRESS**
+* (simatec) dependencies updated
+
 ### 0.2.1 (2025-06-27)
 * (simatec) dependencies updated
 * (simatec) Ready for NodeJS 24.x
