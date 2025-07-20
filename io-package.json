@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "gotify-ws",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "news": {
+      "0.2.2": {
+        "en": "dependencies updated",
+        "de": "aktualisierte abhängigkeiten",
+        "ru": "обновленные зависимости",
+        "pt": "dependências atualizadas",
+        "nl": "afhankelijkheden bijgewerkt",
+        "fr": "dépendances mises à jour",
+        "it": "dipendenze aggiornate",
+        "es": "dependencias actualizadas",
+        "pl": "zaktualizowane zależności",
+        "uk": "оновлені залежності",
+        "zh-cn": "更新依赖关系"
+      },
       "0.2.1": {
         "en": "dependencies updated\nReady for NodeJS 24.x",
         "de": "aktualisierte abhängigkeiten\nBereit für NodeJS 24.x",
@@ -80,19 +93,6 @@
         "pl": "Aktualizacja zależności\nResponsive Design fix\nDodano działanie\neslint- config dodany",
         "uk": "Залежність оновлено\nКріплення адаптивного дизайну\nДодана емісія\neslint-config додано",
         "zh-cn": "更新的依赖关系\n反应设计修正\n添加的问题行动\n添加埃斯林特配置"
-      },
-      "0.1.9": {
-        "en": "Fix for admin 7.1.5",
-        "de": "Fix für admin 7.1.5",
-        "ru": "Admin 7.1.5",
-        "pt": "Fix para admin 7.1.5",
-        "nl": "Fix voor admin 7.1.5",
-        "fr": "Correction pour admin 7.1.5",
-        "it": "Fissare per admin 7.1.5",
-        "es": "Corrección para administración 7.1.5",
-        "pl": "Popraw dla admin 7.1.5",
-        "uk": "Виправлення для адміністратора 7.1.5",
-        "zh-cn": "7.1.5 管理员的固定"
       }
     },
     "titleLang": {
