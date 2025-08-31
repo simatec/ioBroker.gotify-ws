@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "gotify-ws",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "news": {
+      "0.2.3": {
+        "en": "dependencies updated",
+        "de": "aktualisierte abhängigkeiten",
+        "ru": "обновленные зависимости",
+        "pt": "dependências atualizadas",
+        "nl": "afhankelijkheden bijgewerkt",
+        "fr": "dépendances mises à jour",
+        "it": "dipendenze aggiornate",
+        "es": "dependencias actualizadas",
+        "pl": "zaktualizowane zależności",
+        "uk": "оновлені залежності",
+        "zh-cn": "更新依赖关系"
+      },
       "0.2.2": {
         "en": "dependencies updated",
         "de": "aktualisierte abhängigkeiten",
@@ -80,19 +93,6 @@
         "pl": "fix eslint- config\nUstawienie kodu\nAktualizacja zależności\nUaktualnij licencję",
         "uk": "eslint-config виправити\nВиправлення коду\nЗалежність оновлено\nОновлення ліцензії",
         "zh-cn": "埃斯林特配置修复\n代码修正\n更新的依赖关系\n更新许可证"
-      },
-      "0.1.10": {
-        "en": "Dependencies updated\nResponsive Design fix\nIssue Action added\neslint-config added",
-        "de": "Ausgaben aktualisiert\nResponsive Design fix\nAusgabe Aktion hinzugefügt\neslint-config hinzugefügt",
-        "ru": "Обновленные данные о зависимостях\nРеакция Responsive Design\nДополнительные меры\nдобавлена eslint-config",
-        "pt": "Dependências atualizadas\nCorreção de design responsivo\nAção de problemas adicionada\neslint-config adicionado",
-        "nl": "Afhankelijkheden bijgewerkt\nResponsive Design fix\nOnderwerpactie toegevoegd\neslint-config toegevoegd",
-        "fr": "Dépendances actualisées\nCorrection de conception sensible\nMesure à prendre\neslint-config ajouté",
-        "it": "Dipendenze aggiornate\nResponsive Design fix\nAzione di problema aggiunto\neslint-config aggiunto",
-        "es": "Actualización de las dependencias\nResponsive Design fix\nTema Acción añadido\neslint-config añadido",
-        "pl": "Aktualizacja zależności\nResponsive Design fix\nDodano działanie\neslint- config dodany",
-        "uk": "Залежність оновлено\nКріплення адаптивного дизайну\nДодана емісія\neslint-config додано",
-        "zh-cn": "更新的依赖关系\n反应设计修正\n添加的问题行动\n添加埃斯林特配置"
       }
     },
     "titleLang": {
