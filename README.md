@@ -67,7 +67,7 @@ You can then configure a notification service of your choice for forwarding.
 ## Changelog
 
 <!-- ### **WORK IN PROGRESS** -->
-### **WORK IN PROGRESS**
+### 0.2.4 (2025-11-23)
 * (simatec) dependencies updated
 * (simatec) Fix npm publish
 

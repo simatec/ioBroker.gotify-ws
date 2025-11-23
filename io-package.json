@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "gotify-ws",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "news": {
+      "0.2.4": {
+        "en": "dependencies updated\nFix npm publish",
+        "de": "aktualisierte abhängigkeiten\nNpm veröffentlichen",
+        "ru": "обновленные зависимости\nИздательство Fix npm",
+        "pt": "dependências atualizadas\nCorrigir a publicação do npm",
+        "nl": "afhankelijkheden bijgewerkt\nFix npm publiceren",
+        "fr": "dépendances mises à jour\nCorrection de npm publier",
+        "it": "dipendenze aggiornate\nFisso npm pubblicazione",
+        "es": "dependencias actualizadas\nCorrección npm publicar",
+        "pl": "zaktualizowane zależności\nNapraw publikację npm",
+        "uk": "оновлені залежності\nВиправлення npm опублікування",
+        "zh-cn": "更新依赖关系\n修复 npm 发布"
+      },
       "0.2.3": {
         "en": "dependencies updated",
         "de": "aktualisierte abhängigkeiten",
@@ -80,19 +93,6 @@
         "pl": "Aktualizacja zależności\nmały fix",
         "uk": "Залежність оновлено\nневелика фіксація",
         "zh-cn": "更新的依赖关系\n小修补"
-      },
-      "0.1.11": {
-        "en": "eslint-config fix\nCode fix\nDependencies updated\nUpdate License",
-        "de": "eslint-config fix\nCode fix\nAusgaben aktualisiert\nLizenz aktualisieren",
-        "ru": "eslint-конфигурация\nКод\nОбновленные данные о зависимостях\nЛицензия обновления",
-        "pt": "eslint-config fix\nCorreção de código\nDependências atualizadas\nLicença de atualização",
-        "nl": "eslint-config fix\nCodefix\nAfhankelijkheden bijgewerkt\nLicentie bijwerken",
-        "fr": "fixateur eslint-config\nFixation du code\nDépendances actualisées\nMettre à jour la licence",
-        "it": "eslint-config fix\nCodice di correzione\nDipendenze aggiornate\nLicenza di aggiornamento",
-        "es": "eslint-config fix\nCódigo\nActualización de las dependencias\nActualizar Licencia",
-        "pl": "fix eslint- config\nUstawienie kodu\nAktualizacja zależności\nUaktualnij licencję",
-        "uk": "eslint-config виправити\nВиправлення коду\nЗалежність оновлено\nОновлення ліцензії",
-        "zh-cn": "埃斯林特配置修复\n代码修正\n更新的依赖关系\n更新许可证"
       }
     },
     "titleLang": {

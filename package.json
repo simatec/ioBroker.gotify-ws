@@ -1,6 +1,6 @@
 {
   "name": "iobroker.gotify-ws",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Gotify web socket for connection to various notification systems",
   "author": {
     "name": "simatec",
