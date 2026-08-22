@@ -152,6 +152,8 @@ You can then configure a notification service of your choice for forwarding.
 
 ---
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## License
 
 MIT License
