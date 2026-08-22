@@ -1,4 +1,5 @@
 {
+    "All Receiver": "Todo el receptor",
     "Device ID": "ID del dispositivo",
     "Discord Instance": "Instancia de discordia",
     "Discord Target": "Objetivo de discordia",
@@ -14,6 +15,7 @@
     "Matrix Instance": "Instancia de matriz",
     "Notification Settings": "Configuración de las notificaciones",
     "Notification type": "Tipo de notificación",
+    "Notification-Manager Instance": "Instancia de administrador de notificaciones",
     "Pushover Instance": "Instancia fácil de convencer",
     "Signal Instance": "Instancia de señal",
     "Silent Notice": "Aviso silencioso",
@@ -22,5 +24,5 @@
     "Whatsapp Instance": "Instancia de WhatsApp",
     "gotify-ws adapter settings": "Configuración del adaptador para gotify-ws",
     "none": "ninguno",
-    "All Receiver": "Todo el receptor"
+    "xxxx@xxxx.com": "xxxx@xxxx.com"
 }

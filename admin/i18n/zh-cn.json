@@ -1,4 +1,5 @@
 {
+    "All Receiver": "所有接收器",
     "Device ID": "设备ID",
     "Discord Instance": "不和谐实例",
     "Discord Target": "不和谐目标",
@@ -14,6 +15,7 @@
     "Matrix Instance": "矩阵实例",
     "Notification Settings": "通知设置",
     "Notification type": "通知类型",
+    "Notification-Manager Instance": "通知管理器实例",
     "Pushover Instance": "推倒实例",
     "Signal Instance": "信号实例",
     "Silent Notice": "无声通知",
@@ -22,5 +24,5 @@
     "Whatsapp Instance": "Whatsapp 实例",
     "gotify-ws adapter settings": "Gotify-ws 的适配器设置",
     "none": "没有任何",
-    "All Receiver": "所有接收器"
+    "xxxx@xxxx.com": "xxxx@xxxx.com"
 }

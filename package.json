@@ -29,7 +29,6 @@
   },
   "dependencies": {
     "@iobroker/adapter-core": "^3.4.3",
-    "axios": "^1.19.0",
     "ws": "^8.21.3"
   },
   "devDependencies": {

@@ -1,4 +1,5 @@
 {
+    "All Receiver": "Alle ontvanger",
     "Device ID": "Apparaat ID",
     "Discord Instance": "Discord-instantie",
     "Discord Target": "Onenigheid Doel",
@@ -14,6 +15,7 @@
     "Matrix Instance": "Matrix-instantie",
     "Notification Settings": "Notificatie instellingen",
     "Notification type": "Melding type",
+    "Notification-Manager Instance": "Notification-Manager-instantie",
     "Pushover Instance": "Pushover-instantie",
     "Signal Instance": "Signaalinstantie",
     "Silent Notice": "Stille mededeling",
@@ -22,5 +24,5 @@
     "Whatsapp Instance": "Whatsapp-instantie",
     "gotify-ws adapter settings": "Adapterinstellingen voor gotify-ws",
     "none": "geen",
-    "All Receiver": "Alle ontvanger"
+    "xxxx@xxxx.com": "xxxx@xxxx.com"
 }

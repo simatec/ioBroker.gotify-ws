@@ -1,4 +1,5 @@
 {
+    "All Receiver": "Все приемник",
     "Device ID": "Идентификатор устройства",
     "Discord Instance": "Экземпляр Дискорда",
     "Discord Target": "Цель разногласий",
@@ -14,6 +15,7 @@
     "Matrix Instance": "Экземпляр матрицы",
     "Notification Settings": "Настройки уведомлений",
     "Notification type": "Тип уведомления",
+    "Notification-Manager Instance": "Экземпляр диспетчера уведомлений",
     "Pushover Instance": "Пушоверный экземпляр",
     "Signal Instance": "Экземпляр сигнала",
     "Silent Notice": "Тихое уведомление",
@@ -22,5 +24,5 @@
     "Whatsapp Instance": "Экземпляр WhatsApp",
     "gotify-ws adapter settings": "Настройки адаптера для gotify-ws",
     "none": "никто",
-    "All Receiver": "Все приемник"
+    "xxxx@xxxx.com": "хххх@xxxx.com"
 }

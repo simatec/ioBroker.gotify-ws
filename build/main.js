@@ -171,7 +171,7 @@ class GotifyWs extends utils.Adapter {
       });
       this.ws.on("error", async (err) => {
         await this.setState("info.connection", false, true);
-        this.log.error(`WebSocket error: ${err}`);
+        this.log.error(`WebSocket error: ${err.message}`);
       });
     } else {
       this.log.error("WebSocket error: Please check your Configuration");
@@ -356,11 +356,11 @@ class GotifyWs extends utils.Adapter {
   async _(word, systemLang) {
     return new Promise((resolve) => {
       void (async () => {
-        const translations = await Promise.resolve().then(() => __toESM(require(`../admin/i18n/${systemLang ? systemLang : "en"}/translations.json`)));
+        const translations = await Promise.resolve().then(() => __toESM(require(`../admin/i18n/${systemLang ? systemLang : "en"}.json`)));
         if (translations[word]) {
           resolve(translations[word]);
         } else {
-          this.log.debug(`Please translate in translations.json: ${word}`);
+          this.log.debug(`Please translate in ${systemLang ? systemLang : "en"}.json: ${word}`);
           resolve(word);
         }
       })();
