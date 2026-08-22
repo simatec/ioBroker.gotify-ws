@@ -67,6 +67,9 @@ You can then configure a notification service of your choice for forwarding.
 ## Changelog
 
 <!-- ### **WORK IN PROGRESS** -->
+### **WORK IN PROGRESS**
+* (simatec) dependencies updated
+
 ### 0.3.0 (2026-08-22)
 * (copilot) Adapter requires node.js >= 22 now
 * (simatec) dependencies updated
